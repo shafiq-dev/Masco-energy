@@ -9,12 +9,12 @@ export const images = {
   about: "/images/about.jpg",
   process: "/images/process.jpg",
   services: {
-    "EPC Contracting": "/images/service-industrial.jpg",
-    "Oil & Gas": "/images/service-power.jpg",
-    Petrochemical: "/images/service-energy.jpg",
-    "Industrial Infrastructure": "/images/service-infrastructure.jpg",
-    "Digital Infrastructure": "/images/gallery-2.jpg",
-    "EPCM Delivery": "/images/service-partnerships.jpg",
+    Engineering: "/images/service-energy.jpg",
+    Procurement: "/images/service-partnerships.jpg",
+    Construction: "/images/service-industrial.jpg",
+    Commissioning: "/images/service-power.jpg",
+    "Operations & Maintenance": "/images/service-infrastructure.jpg",
+    "Project Management": "/images/gallery-2.jpg",
   },
   testimonials: [
     "/images/testimonial-1.jpg",

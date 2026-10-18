@@ -17,10 +17,7 @@ export function CountUp({ metric, className = "", duration = 1600 }: CountUpProp
   const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (reduced) {
-      setDisplay(metric.value);
-      return;
-    }
+    if (reduced) return;
 
     const el = ref.current;
     if (!el) return;
@@ -52,7 +49,7 @@ export function CountUp({ metric, className = "", duration = 1600 }: CountUpProp
 
   return (
     <span ref={ref} className={className}>
-      {formatMetricValue(metric, display)}
+      {formatMetricValue(metric, reduced ? metric.value : display)}
     </span>
   );
 }

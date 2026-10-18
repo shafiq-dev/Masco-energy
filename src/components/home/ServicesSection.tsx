@@ -1,11 +1,8 @@
 import Image from "next/image";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
-import { ProgressRing } from "@/components/metrics/ProgressRing";
-import { TrendBadge } from "@/components/metrics/TrendBadge";
 import { services } from "@/lib/home-content";
 import { images, type ServiceName } from "@/lib/images";
 import { IconBox, serviceIcons } from "@/lib/icons";
-import { getServiceMetric } from "@/lib/metrics";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 
@@ -26,13 +23,12 @@ export function ServicesSection({
       >
         <SectionHeader
           eyebrow="Services"
-          title="Integrated sector capabilities"
-          description="End-to-end solutions across energy and industrial markets."
+          title="Integrated lifecycle capabilities"
+          description="End-to-end services from early engineering through operations and maintenance."
         />
         <div className="mt-12 divide-y divide-masco-navy/10">
           {services.map((service, index) => {
             const Icon = serviceIcons[service.name];
-            const metric = getServiceMetric(service.name);
             return (
               <AnimateIn key={service.name} delay={index * 0.06}>
                 <article className="grid gap-6 py-8 md:grid-cols-[auto_1fr_1fr] md:items-center">
@@ -49,13 +45,10 @@ export function ServicesSection({
                     <p className="text-sm leading-relaxed text-masco-black/60 md:text-right">
                       {service.description}
                     </p>
-                    {showMetrics && metric && (
-                      <div className="flex items-center gap-3">
-                        <span className="rounded-[20px] bg-masco-navy/5 px-3 py-1 text-xs font-bold text-masco-navy">
-                          {metric.metricLabel}
-                        </span>
-                        <TrendBadge trend={metric.trend} />
-                      </div>
+                    {showMetrics && (
+                      <span className="rounded-[20px] bg-masco-navy/5 px-3 py-1 text-xs font-bold text-masco-navy">
+                        {service.metric}
+                      </span>
                     )}
                   </div>
                 </article>
@@ -74,7 +67,7 @@ export function ServicesSection({
       <SectionHeader
         eyebrow="Services"
         title="Our Core Capabilities"
-        description="Comprehensive EPC, EPCM, and hybrid delivery across energy, oil & gas, petrochemical, and industrial infrastructure in the Kingdom."
+        description="Six connected capabilities covering the full asset lifecycle, delivered through EPC, EPCM, and hybrid models."
       />
 
       <div
@@ -86,10 +79,9 @@ export function ServicesSection({
       >
         {services.map((service, index) => {
           const Icon = serviceIcons[service.name];
-          const metric = getServiceMetric(service.name);
           const imageSrc =
             images.services[service.name as ServiceName] ??
-            images.services["EPC Contracting"];
+            images.services.Engineering;
 
           return (
             <AnimateIn key={service.name} delay={index * 0.06}>
@@ -120,24 +112,10 @@ export function ServicesSection({
                     {service.description}
                   </p>
                   <div className="mt-6 flex items-center justify-between gap-4 border-t border-masco-navy/10 pt-4">
-                    {showMetrics && metric ? (
-                      <>
-                        <div className="flex flex-col gap-1">
-                          <p className="text-xs font-bold uppercase tracking-[0.15em] text-masco-blue">
-                            {metric.metricLabel}
-                          </p>
-                          <TrendBadge trend={metric.trend} />
-                        </div>
-                        <ProgressRing value={metric.sharePct} size={52} />
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-xs font-bold uppercase tracking-[0.15em] text-masco-blue">
-                          {service.metric}
-                        </p>
-                        <span className="h-1.5 w-8 rounded-full bg-gradient-to-r from-masco-navy to-masco-blue" />
-                      </>
-                    )}
+                    <p className="text-xs font-bold uppercase tracking-[0.15em] text-masco-blue">
+                      {service.metric}
+                    </p>
+                    <span className="h-1.5 w-8 rounded-full bg-gradient-to-r from-masco-navy to-masco-blue" />
                   </div>
                 </div>
               </article>

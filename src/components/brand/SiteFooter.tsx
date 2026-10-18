@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MascoLogo } from "@/components/brand/MascoLogo";
 import { company, navItems } from "@/lib/home-content";
-import { Mail, MapPin, Phone } from "@/lib/icons";
+import { Mail, MapPin } from "@/lib/icons";
 
 export function SiteFooter() {
   return (
@@ -20,7 +20,7 @@ export function SiteFooter() {
             </h2>
             <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/85 md:text-base">
               Saudi-based EPC and integrated contracting across energy, oil
-              &amp; gas, petrochemical, and industrial infrastructure — aligned
+              &amp; gas, petrochemical, and industrial infrastructure, aligned
               with Saudi Vision 2030.
             </p>
           </div>
@@ -79,10 +79,6 @@ export function SiteFooter() {
                 <Mail className="h-4 w-4 shrink-0 text-masco-blue" strokeWidth={1.75} />
                 {company.email}
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 shrink-0 text-masco-blue" strokeWidth={1.75} />
-                {company.phone}
-              </li>
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-masco-blue" strokeWidth={1.75} />
                 <span>
@@ -101,10 +97,10 @@ export function SiteFooter() {
               Company
             </p>
             <ul className="mt-4 space-y-3 text-sm text-masco-black/65">
-              <li>Founded {company.founded}</li>
-              <li>{company.employees} employees</li>
-              <li>Vision 2030 Aligned</li>
-              <li>EPC · EPCM · Hybrid</li>
+              <li>{company.legacy}</li>
+              <li>{company.workforce}</li>
+              <li>Seven core sectors</li>
+              <li>EPC / EPCM / Hybrid</li>
             </ul>
           </div>
         </div>

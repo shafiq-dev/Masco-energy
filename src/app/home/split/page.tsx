@@ -19,10 +19,10 @@ export default function SplitHomePage() {
       <HeroBanner
         variant="split"
         subtitle="Building for Better Life"
-        title="Trusted Saudi EPC Partner — Al Khobar to the Kingdom"
+        title="Trusted Saudi EPC Partner Across the Kingdom"
         description={aboutParagraphs[2]}
         primaryCta={{ label: "About Us", href: "#about" }}
-        secondaryCta={{ label: "Project Directory", href: "#projects" }}
+        secondaryCta={{ label: "Our Sectors", href: "#projects" }}
       />
 
       <SplitMetricsPanel />

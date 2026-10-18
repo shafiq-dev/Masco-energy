@@ -13,9 +13,7 @@ import { StatsSection } from "@/components/home/StatsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { pillars, aboutParagraphs } from "@/lib/home-content";
 import { IconBox, pillarIcons } from "@/lib/icons";
-import { pillarMetrics } from "@/lib/metrics";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
-import { CountUp } from "@/components/metrics/CountUp";
 
 export default function MinimalHomePage() {
   return (
@@ -44,7 +42,6 @@ export default function MinimalHomePage() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {pillars.map((pillar, index) => {
             const Icon = pillarIcons[pillar.title];
-            const metric = pillarMetrics[pillar.title];
             return (
               <AnimateIn key={pillar.title} delay={index * 0.08}>
                 <article className="masco-card flex gap-4 p-6">
@@ -53,24 +50,6 @@ export default function MinimalHomePage() {
                     <h3 className="text-lg font-bold text-masco-navy">
                       {pillar.title}
                     </h3>
-                    {metric && (
-                      <div className="mt-2">
-                        <CountUp
-                          metric={{
-                            id: pillar.title,
-                            value: metric.value,
-                            suffix: metric.suffix,
-                            prefix: metric.prefix,
-                            decimals: metric.decimals,
-                            label: metric.caption,
-                          }}
-                          className="text-lg font-bold text-masco-blue"
-                        />
-                        <p className="text-xs text-masco-black/50">
-                          {metric.caption}
-                        </p>
-                      </div>
-                    )}
                     <p className="mt-3 text-sm leading-relaxed text-masco-black/65">
                       {pillar.text}
                     </p>

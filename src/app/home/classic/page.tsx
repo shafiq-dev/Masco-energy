@@ -23,7 +23,7 @@ export default function ClassicHomePage() {
         title="Trusted Saudi EPC Partner for Energy & Industry"
         description={aboutParagraphs[0]}
         primaryCta={{ label: "Our Services", href: "#services" }}
-        secondaryCta={{ label: "Project Directory", href: "#projects" }}
+        secondaryCta={{ label: "Our Sectors", href: "#projects" }}
       />
 
       <StatsSection variant="bar" theme="classic" />

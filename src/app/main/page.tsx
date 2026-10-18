@@ -16,7 +16,7 @@ export default function MainPage() {
           <SectionHeader
             eyebrow="Design Exploration"
             title="MASCO Energy Home Page Directions"
-            description="Five homepage concepts for MASCO Energy — a Saudi-based EPC company headquartered in Al Khobar, delivering energy and industrial projects aligned with Vision 2030."
+            description="Nine distinct corporate art directions using one unified MASCO Energy profile: the same company story, capabilities, sectors, values, delivery models, and contact journey expressed through different visual systems."
           />
         </div>
       </section>

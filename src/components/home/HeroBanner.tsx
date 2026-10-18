@@ -83,7 +83,7 @@ export function HeroBanner({
                   Building for Better Life
                 </p>
                 <p className="mt-1 text-xs text-white/75">
-                  Al Khobar · Kingdom of Saudi Arabia
+                  Al Khobar, Kingdom of Saudi Arabia
                 </p>
               </div>
             </div>

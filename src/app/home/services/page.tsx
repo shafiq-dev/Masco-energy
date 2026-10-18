@@ -20,7 +20,7 @@ export default function ServicesHomePage() {
       <HeroBanner
         variant="services"
         subtitle="Building for Better Life"
-        title="EPC · EPCM · Hybrid Delivery Across the Kingdom"
+        title="EPC, EPCM & Hybrid Delivery Across the Kingdom"
         description={aboutParagraphs[3]}
         primaryCta={{ label: "View Services", href: "#services" }}
       />

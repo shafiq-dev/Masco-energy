@@ -25,7 +25,7 @@ export function AboutSection({ layout = "centered" }: AboutSectionProps) {
           <div>
             <SectionHeader
               eyebrow="About Us"
-              title="Visual and strategic foundations"
+              title="A focused Saudi energy platform"
               description={aboutParagraphs[0]}
             />
             <div className="mt-10 space-y-5">
@@ -80,8 +80,8 @@ export function AboutSection({ layout = "centered" }: AboutSectionProps) {
     <SectionShell id="about" className="masco-grid-bg">
       <SectionHeader
         eyebrow="About Us"
-        title="Saudi EPC & Integrated Contracting"
-        description={`${visionMission.mission} Headquartered in Al Khobar, Eastern Province.`}
+        title="Saudi EPC & Integrated Energy Contracting"
+        description={visionMission.mission}
       />
 
       <div className="mt-14 grid items-start gap-8 lg:grid-cols-12 lg:gap-10">

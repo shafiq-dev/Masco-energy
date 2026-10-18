@@ -18,9 +18,9 @@ export function TestimonialsSection({
         <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeader
-              eyebrow="Strategic Highlights"
-              title="Projects & Partnerships"
-              description="Partners who value consistency, professionalism, and integrated EPC delivery across the Kingdom."
+              eyebrow="Delivery Principles"
+              title="How MASCO Energy creates value"
+              description="A consistent operating approach connects technical expertise, governance, execution, and long-term asset performance."
             />
           </div>
           <article className="masco-card relative overflow-hidden p-8 lg:col-span-7 lg:p-10">
@@ -62,9 +62,9 @@ export function TestimonialsSection({
   return (
     <SectionShell className="border-t border-masco-navy/10 masco-surface">
       <SectionHeader
-        eyebrow="Strategic Highlights"
-        title="Projects & Partnerships"
-        description="Key milestones from MASCO Energy's project portfolio and strategic collaborations across the Kingdom."
+        eyebrow="Delivery Principles"
+        title="How MASCO Energy creates value"
+        description="A consistent operating approach connects technical expertise, governance, execution, and long-term asset performance."
       />
 
       <div className="mt-14 grid gap-6 lg:grid-cols-12">

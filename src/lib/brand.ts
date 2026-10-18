@@ -37,4 +37,24 @@ export const homeVariants = [
     title: "Editorial Bands",
     direction: "Horizontal content bands alternating white and soft brand tints",
   },
+  {
+    slug: "monumental",
+    title: "Monumental Executive",
+    direction: "Large-scale corporate statements, cinematic infrastructure, and disciplined whitespace",
+  },
+  {
+    slug: "kinetic",
+    title: "Kinetic Systems",
+    direction: "A motion-led project journey with precise transitions and connected delivery stages",
+  },
+  {
+    slug: "dossier",
+    title: "Institutional Dossier",
+    direction: "Structured corporate reporting with numbered sections, data rails, and formal hierarchy",
+  },
+  {
+    slug: "luminous",
+    title: "Luminous Precision",
+    direction: "Immersive imagery, generous type, soft depth, and a highly refined brand experience",
+  },
 ] as const;

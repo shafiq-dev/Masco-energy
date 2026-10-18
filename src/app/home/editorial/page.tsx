@@ -56,7 +56,7 @@ export default function EditorialHomePage() {
         title="Saudi EPC excellence for energy & industry"
         subtitle="Building for Better Life"
         description={aboutParagraphs[1]}
-        primaryCta={{ label: "Explore Projects", href: "#projects" }}
+        primaryCta={{ label: "Explore Sectors", href: "#projects" }}
       />
 
       {bands.map((band, index) => (

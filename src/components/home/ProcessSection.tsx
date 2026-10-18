@@ -1,12 +1,10 @@
 import { AnimateIn } from "@/components/metrics/AnimateIn";
-import { ProgressRing } from "@/components/metrics/ProgressRing";
 import { SectionImage } from "@/components/home/SectionImage";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 import { processSteps } from "@/lib/home-content";
 import { images } from "@/lib/images";
 import { IconBox, processIcons } from "@/lib/icons";
-import { processProgress } from "@/lib/metrics";
 
 export function ProcessSection() {
   return (
@@ -34,7 +32,6 @@ export function ProcessSection() {
           <div className="space-y-5">
             {processSteps.map((step, index) => {
               const Icon = processIcons[step.title];
-              const progress = processProgress[index] ?? 90;
               return (
                 <AnimateIn key={step.step} delay={index * 0.08}>
                   <article className="masco-card relative flex gap-5 p-6 lg:pl-14">
@@ -52,7 +49,6 @@ export function ProcessSection() {
                             {step.title}
                           </h3>
                         </div>
-                        <ProgressRing value={progress} size={48} />
                       </div>
                       <p className="mt-2 text-sm leading-relaxed text-masco-black/60">
                         {step.text}

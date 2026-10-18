@@ -16,6 +16,14 @@ export function ThumbnailPreview({ slug }: ThumbnailPreviewProps) {
       return <SplitPreview />;
     case "editorial":
       return <EditorialPreview />;
+    case "monumental":
+      return <MonumentalPreview />;
+    case "kinetic":
+      return <KineticPreview />;
+    case "dossier":
+      return <DossierPreview />;
+    case "luminous":
+      return <LuminousPreview />;
     default:
       return null;
   }
@@ -132,9 +140,9 @@ function SplitPreview() {
       </div>
       <div className="flex w-[45%] flex-col gap-2 bg-masco-navy/5 p-3">
         {[
-          { n: "25+", l: "Years" },
-          { n: "500+", l: "Projects" },
-          { n: "12", l: "Sectors" },
+          { n: "60+", l: "Years" },
+          { n: "3,000+", l: "Professionals" },
+          { n: "7", l: "Sectors" },
         ].map((stat) => (
           <div
             key={stat.l}
@@ -181,6 +189,81 @@ function EditorialPreview() {
           ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function MonumentalPreview() {
+  return (
+    <div className="relative flex h-full flex-col overflow-hidden bg-[#f4f7fa] p-3 text-[6px]">
+      <div className="flex items-center justify-between">
+        <span className="font-bold text-masco-navy">MASCO Energy</span>
+        <span className="uppercase tracking-[0.18em] text-masco-blue">Theme 06</span>
+      </div>
+      <div className="mt-auto max-w-[78%] pb-2">
+        <span className="block text-[13px] font-bold leading-[0.95] text-masco-navy">
+          Energy built at national scale.
+        </span>
+        <div className="mt-3 h-[2px] w-10 bg-masco-blue" />
+      </div>
+      <div className="absolute -bottom-6 -right-5 h-24 w-24 rounded-full border-[12px] border-masco-blue/15" />
+    </div>
+  );
+}
+
+function KineticPreview() {
+  return (
+    <div className="flex h-full flex-col bg-[#071c31] p-3 text-[6px] text-white">
+      <div className="flex items-center justify-between">
+        <span className="font-bold">MASCO Energy</span>
+        <span className="text-masco-blue">06 capabilities</span>
+      </div>
+      <div className="my-auto">
+        <span className="block text-[12px] font-bold leading-none">One connected</span>
+        <span className="block text-[12px] font-bold leading-none text-masco-blue">delivery system.</span>
+      </div>
+      <div className="grid grid-cols-4 gap-1">
+        {["01", "02", "03", "04"].map((step) => (
+          <div key={step} className="border-t border-white/25 pt-1 text-white/55">{step}</div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function DossierPreview() {
+  return (
+    <div className="grid h-full grid-cols-[30%_70%] text-[6px]">
+      <div className="bg-masco-navy p-3 text-white">
+        <span className="font-bold">MASCO</span>
+        <span className="mt-10 block text-[18px] font-bold leading-none text-masco-blue">07</span>
+        <span className="mt-1 block text-white/55">Core sectors</span>
+      </div>
+      <div className="p-3">
+        <span className="uppercase tracking-widest text-masco-blue">Corporate profile</span>
+        <span className="mt-3 block text-[10px] font-bold leading-tight text-masco-navy">A disciplined partner for complex infrastructure.</span>
+        <div className="mt-4 space-y-2">
+          {["Capabilities", "Sectors", "Values"].map((label, index) => (
+            <div key={label} className="flex items-center gap-2 border-t border-masco-navy/15 pt-1">
+              <span className="text-masco-blue">0{index + 1}</span><span>{label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function LuminousPreview() {
+  return (
+    <div className="relative flex h-full flex-col items-center overflow-hidden bg-gradient-to-b from-white to-[#eaf5fb] px-4 py-3 text-center text-[6px]">
+      <span className="font-bold text-masco-navy">MASCO Energy</span>
+      <div className="mt-7">
+        <span className="block text-[12px] font-bold leading-none text-masco-navy">Built for what</span>
+        <span className="mt-1 block text-[12px] font-bold leading-none text-masco-blue">comes next.</span>
+      </div>
+      <span className="mt-3 max-w-[75%] leading-relaxed text-masco-black/50">Integrated delivery for essential energy and industrial infrastructure.</span>
+      <div className="absolute -bottom-10 h-24 w-[80%] rounded-t-[24px] bg-gradient-to-br from-masco-navy to-masco-blue shadow-2xl" />
     </div>
   );
 }

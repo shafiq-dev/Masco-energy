@@ -1,10 +1,8 @@
 import {
   BadgeCheck,
   Briefcase,
-  Building2,
   CircleHelp,
   Factory,
-  FolderKanban,
   Globe2,
   Handshake,
   Home,
@@ -14,32 +12,29 @@ import {
   MapPin,
   PenTool,
   Phone,
-  Power,
   Rocket,
   Search,
   ShieldCheck,
-  Target,
   TrendingUp,
   Users,
   Wrench,
-  Zap,
   type LucideIcon,
 } from "lucide-react";
 
 export const serviceIcons: Record<string, LucideIcon> = {
-  "EPC Contracting": Factory,
-  "Oil & Gas": Power,
-  Petrochemical: Zap,
-  "Industrial Infrastructure": Building2,
-  "Digital Infrastructure": Briefcase,
-  "EPCM Delivery": Handshake,
+  Engineering: PenTool,
+  Procurement: Search,
+  Construction: Factory,
+  Commissioning: Rocket,
+  "Operations & Maintenance": Wrench,
+  "Project Management": Briefcase,
 };
 
 export const pillarIcons: Record<string, LucideIcon> = {
-  "Vision 2030 Alignment": TrendingUp,
-  "Quality & Safety": ShieldCheck,
-  "Saudi Expertise": BadgeCheck,
-  "Innovation & Digital": Layers,
+  Safety: ShieldCheck,
+  "Quality & Reliability": BadgeCheck,
+  Integrity: Handshake,
+  "Innovation & Sustainability": Layers,
 };
 
 export const processIcons: Record<string, LucideIcon> = {
@@ -50,16 +45,12 @@ export const processIcons: Record<string, LucideIcon> = {
 };
 
 export const kpiIcons: Record<string, LucideIcon> = {
+  legacy: TrendingUp,
   workforce: Users,
-  projects: FolderKanban,
-  contract: Briefcase,
-  safety: ShieldCheck,
-  delivery: Target,
-  saudi: BadgeCheck,
-  capacity: Zap,
-  partners: Handshake,
-  regions: Globe2,
-  vision2030: TrendingUp,
+  sectors: Factory,
+  capabilities: Wrench,
+  models: Layers,
+  kingdom: Globe2,
 };
 
 /** @deprecated Use kpiIcons with stat.id */

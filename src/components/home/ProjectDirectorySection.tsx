@@ -14,9 +14,9 @@ export function ProjectDirectorySection() {
       className="border-t border-masco-navy/10 masco-surface-tint"
     >
       <SectionHeader
-        eyebrow="Project Directory"
-        title="Delivering Across the Kingdom"
-        description="A selection of strategic projects, partnerships, and programs reflecting MASCO Energy's EPC excellence and commitment to Saudi Vision 2030."
+        eyebrow="Sectors"
+        title="Delivering Across Critical Markets"
+        description="MASCO Energy brings integrated project delivery to established energy markets, essential infrastructure, industrial growth sectors, and mission-critical digital facilities."
       />
 
       <div className="mt-12 grid gap-6 lg:grid-cols-2">

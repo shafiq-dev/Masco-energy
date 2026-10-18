@@ -1,37 +1,22 @@
 import { AnimateIn } from "@/components/metrics/AnimateIn";
-import { BarChart } from "@/components/metrics/BarChart";
-import { regionalFootprint } from "@/lib/metrics";
-import { sectorPortfolio } from "@/lib/metrics";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
+import { projects } from "@/lib/home-content";
 
 export function SectorBreakdownSection() {
   return (
     <SectionShell className="border-t border-masco-navy/10 masco-surface-tint">
-      <SectionHeader
-        eyebrow="Market Intelligence"
-        title="Sector & Regional Footprint"
-        description="Portfolio distribution across energy sectors and geographic regions in the Kingdom."
-      />
-
-      <div className="mt-14 grid gap-10 lg:grid-cols-2">
-        <AnimateIn>
-          <div className="masco-card p-8">
-            <h3 className="text-lg font-bold text-masco-navy">
-              Sector Breakdown
-            </h3>
-            <BarChart data={sectorPortfolio} className="mt-8" />
-          </div>
-        </AnimateIn>
-
-        <AnimateIn delay={0.1}>
-          <div className="masco-card p-8">
-            <h3 className="text-lg font-bold text-masco-navy">
-              Regional Footprint
-            </h3>
-            <BarChart data={regionalFootprint} className="mt-8" />
-          </div>
-        </AnimateIn>
+      <SectionHeader eyebrow="Market Coverage" title="Experience across critical sectors" description="A diversified sector platform supports conventional energy, essential utilities, industrial growth, and the Kingdom's expanding digital economy." />
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {projects.map((sector, index) => (
+          <AnimateIn key={sector.id} delay={index * 0.06}>
+            <article className="masco-card h-full p-6">
+              <span className="text-xs font-bold text-masco-blue">{String(index + 1).padStart(2, "0")}</span>
+              <h3 className="mt-3 text-lg font-bold text-masco-navy">{sector.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-masco-black/60">{sector.description}</p>
+            </article>
+          </AnimateIn>
+        ))}
       </div>
     </SectionShell>
   );
