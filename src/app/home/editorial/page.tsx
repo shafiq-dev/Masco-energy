@@ -1,3 +1,4 @@
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import Link from "next/link";
 import { SectionImage } from "@/components/home/SectionImage";
 import { SiteFooter } from "@/components/brand/SiteFooter";
@@ -14,7 +15,6 @@ import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import {
   aboutParagraphs,
   pillars,
-  projects,
   visionMission,
 } from "@/lib/home-content";
 import { IconBox, pillarIcons } from "@/lib/icons";
@@ -24,39 +24,40 @@ const bands = [
     tone: "gradient" as const,
     title: "Our Vision",
     text: visionMission.vision,
-    image: projects[0].image,
+    image: "/images/generated/pipeline-corridor.png",
   },
   {
     tone: "white" as const,
     title: "Who We Are",
     text: aboutParagraphs[0],
-    image: projects[4].image,
+    image: "/images/generated/technical-training-empty.png",
   },
   {
     tone: "tint" as const,
     title: "Our Mission",
     text: visionMission.mission,
-    image: projects[1].image,
+    image: "/images/generated/engineering-design-empty.png",
   },
   {
     tone: "white" as const,
     title: "Saudi Vision 2030",
     text: aboutParagraphs[3],
-    image: projects[5].image,
+    image: "/images/generated/epc-construction-empty.png",
   },
 ];
 
 export default function EditorialHomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader />
+    <div className="flex min-h-screen flex-col bg-white theme-editorial">
+      <SiteHeader theme="editorial" />
 
+      <main className="flex-1">
       <HeroBanner
         variant="editorial"
         title="Saudi EPC excellence for energy & industry"
-        subtitle="Building for Better Life"
+        subtitle="Engineering Progress. Delivering with Purpose."
         description={aboutParagraphs[1]}
-        primaryCta={{ label: "Explore Sectors", href: "#projects" }}
+        primaryCta={{ label: "Explore Projects", href: "#projects" }}
       />
 
       {bands.map((band, index) => (
@@ -161,10 +162,11 @@ export default function EditorialHomePage() {
 
       <GrowthTimelineSection />
       <ServicesSection layout="grid" showMetrics />
-      <ProjectDirectorySection />
+      <ProjectDirectorySection theme="editorial" />
       <StatsSection variant="bar" theme="editorial" />
       <ProcessSection />
       <TestimonialsSection layout="quote" />
+      <ProfileStorySections theme="editorial" />
       <FAQSection variant="minimal" />
 
       <section className="border-t border-masco-navy/10 px-6 py-16 lg:px-16">
@@ -173,7 +175,7 @@ export default function EditorialHomePage() {
             Compare all homepage directions
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-masco-black/60">
-            Return to the main gallery to review all five corporate concepts.
+            Return to the main gallery to review all nine corporate concepts.
           </p>
           <Link
             href="/main"
@@ -184,7 +186,9 @@ export default function EditorialHomePage() {
         </div>
       </section>
 
-      <SiteFooter />
+      </main>
+
+      <SiteFooter theme="editorial" />
     </div>
   );
 }

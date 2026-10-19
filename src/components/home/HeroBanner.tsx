@@ -26,21 +26,14 @@ export function HeroBanner({
     return (
       <section id="home" className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src={imageSrc}
-            alt="Energy and industrial infrastructure"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-masco-navy/95 via-masco-navy/80 to-masco-blue/70" />
+          <Image src={imageSrc} alt="Illustrative Saudi energy infrastructure" fill priority className="object-cover" sizes="100vw" />
+          <div className="absolute inset-0 bg-gradient-to-r from-masco-navy/95 via-masco-navy/80 to-masco-navy/30" />
         </div>
 
         <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-12 lg:items-center lg:px-16 lg:py-28">
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-3 rounded-[20px] border border-white/20 bg-white/10 px-4 py-2 backdrop-blur-sm">
-              <span className="h-2 w-2 rounded-full bg-masco-blue" />
+              <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-white/90">
                 {subtitle}
               </p>
@@ -73,14 +66,14 @@ export function HeroBanner({
           <div className="hidden lg:col-span-5 lg:block">
             <div className="relative overflow-hidden rounded-[20px] border border-white/15 shadow-2xl">
               <SectionImage
-                src={imageSrc}
-                alt="MASCO Energy operations"
+                src={images.services.Construction}
+                alt="Illustrative industrial EPC construction"
                 aspect="portrait"
                 className="rounded-[20px]"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-masco-navy/90 to-transparent p-6">
                 <p className="text-sm font-bold text-white">
-                  Building for Better Life
+                  Engineering Progress. Delivering with Purpose.
                 </p>
                 <p className="mt-1 text-xs text-white/75">
                   Al Khobar, Kingdom of Saudi Arabia
@@ -99,7 +92,7 @@ export function HeroBanner({
         <div className="flex flex-col justify-center px-6 py-20 lg:px-16 lg:py-24">
           <div className="mx-auto w-full max-w-xl lg:mx-0">
             <div className="flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-masco-blue" />
+              <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-masco-blue">
                 {subtitle}
               </p>
@@ -147,7 +140,7 @@ export function HeroBanner({
         <div className="mx-auto grid max-w-7xl gap-10 py-16 lg:grid-cols-2 lg:items-center lg:py-24">
           <div>
             <div className="flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-masco-blue" />
+              <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
               <p className="text-xs font-bold uppercase tracking-[0.25em] text-masco-blue">
                 {subtitle}
               </p>
@@ -167,7 +160,7 @@ export function HeroBanner({
           </div>
           <SectionImage
             src={imageSrc}
-            alt="Renewable energy landscape"
+            alt="Illustrative Saudi pipeline infrastructure"
             aspect="portrait"
             priority
             className="shadow-lg"
@@ -185,7 +178,7 @@ export function HeroBanner({
       <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div>
           <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-masco-blue" />
+            <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
             <p className="text-xs font-bold uppercase tracking-[0.25em] text-masco-blue">
               {subtitle}
             </p>

@@ -2,61 +2,127 @@ import { getKpisByIds, themeStats, type KpiMetric } from "@/lib/metrics";
 
 export const company = {
   name: "MASCO Energy",
-  tagline: "Building for Better Life",
+  tagline: "Engineering Progress. Delivering with Purpose.",
+  profileYear: "2026",
   website: "https://www.masco.com.sa/",
   email: "info@masco.com.sa",
-  headquarters: "Alfardan Tower, Prince Turki Bin Abdulaziz Street",
-  city: "Al Khobar, Eastern Province",
+  social: "@MASCOEnergy_sa",
+  headquarters: "Al Khobar",
+  city: "Eastern Province",
   country: "Kingdom of Saudi Arabia",
-  legacy: "More than six decades of contracting experience",
-  workforce: "3,000+ professionals",
-  industry: "EPC and integrated energy contracting",
+  industry: "Saudi EPC and industrial infrastructure",
+  legacy: "Decades of Saudi contracting and infrastructure experience",
+  workforce: "+3,000 workforce",
 } as const;
 
 export const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Capabilities", href: "#services" },
-  { label: "Sectors", href: "#projects" },
+  { label: "Projects", href: "#projects" },
+  { label: "Our Businesses", href: "#businesses" },
   { label: "Contact", href: "#contact" },
-  { label: "FAQ", href: "#faq" },
 ] as const;
 
 export const visionMission = {
-  vision: "To be a trusted Saudi partner in delivering resilient and sustainable energy infrastructure that supports national development and economic growth.",
-  mission: "To execute high-quality energy and industrial projects through professionalism, innovation, and operational excellence.",
+  vision: "To be a trusted Saudi partner for integrated energy and industrial solutions, enabling the Kingdom's continued growth and transformation.",
+  mission: "To deliver safe, reliable and integrated EPC solutions through technical expertise, disciplined execution, strong partnerships, and continuous development of our people and capabilities.",
 } as const;
 
 export const aboutParagraphs = [
-  "MASCO Energy is a Saudi EPC and integrated energy contracting company serving the power, oil and gas, petrochemical, utilities, mining, industrial, and digital infrastructure markets.",
-  "The company builds on more than six decades of contracting experience in the Kingdom, supported by over 3,000 professionals and a culture of disciplined project execution.",
-  "From engineering and procurement through construction, commissioning, operations, and maintenance, MASCO Energy brings one accountable delivery platform to complex assets and programmes.",
-  "EPC, EPCM, and hybrid delivery models are tailored to each client's priorities, with safety, quality, reliability, innovation, and sustainability embedded throughout the project lifecycle.",
+  "MASCO Energy is a Saudi EPC and industrial infrastructure company delivering integrated solutions across energy, oil and gas, petrochemicals, utilities, mining and strategic infrastructure.",
+  "Evolving from MASCO's established contracting business, formerly known as MASCO General Contracting, the company brings decades of infrastructure and construction experience into a focused energy platform.",
+  "Capabilities span engineering, procurement, construction, commissioning, handover, operations and maintenance, supported by local market knowledge, multidisciplinary expertise and large-scale execution capability.",
+  "Backed by the wider strength of MASCO Group, MASCO Energy delivers complex projects across the Kingdom while expanding specialized pipeline and digital infrastructure solutions.",
+] as const;
+
+export const ceoMessage = {
+  name: "Eng. Omar M. Algethaan",
+  title: "Chief Executive Officer",
+  image: "/images/profile/ceo-omar-algethaan.jpg",
+  paragraphs: [
+    "MASCO Energy is entering a new chapter built on a strong foundation of contracting experience, technical capability and proven project execution across Saudi Arabia.",
+    "As the Kingdom advances its energy and industrial ambitions, MASCO Energy is strengthening integrated EPC capabilities, expanding into specialized areas of the energy value chain, and building the partnerships and expertise required for increasingly complex projects.",
+    "Our focus remains clear: deliver safely, execute with discipline, and create lasting value for our clients while investing in national talent, specialized capabilities, technology and strategic partnerships.",
+  ],
+} as const;
+
+export const heritage = [
+  { title: "Foundation", text: "Roads, transportation and construction." },
+  { title: "Infrastructure Expansion", text: "Highways, water and major civil works." },
+  { title: "National Mega-Projects", text: "Railways and strategic infrastructure." },
+  { title: "Industrial & Energy Expansion", text: "Major industrial developments and energy projects." },
+  { title: "MASCO Energy", text: "Integrated EPC and specialized energy solutions." },
 ] as const;
 
 export const services = [
-  { name: "Engineering", description: "Multidisciplinary design, technical studies, constructability, value engineering, and project controls aligned with client requirements and Saudi standards.", metric: "Concept to detailed design" },
-  { name: "Procurement", description: "Strategic sourcing, vendor qualification, expediting, inspection, logistics, and materials management through a controlled global supply chain.", metric: "Integrated supply chain" },
-  { name: "Construction", description: "Safe, quality-led civil, mechanical, electrical, and instrumentation execution for complex energy and industrial facilities.", metric: "Field execution" },
-  { name: "Commissioning", description: "System completion, testing, start-up support, performance verification, and structured handover for operational readiness.", metric: "Ready for operation" },
-  { name: "Operations & Maintenance", description: "Lifecycle support that protects asset availability, reliability, performance, and long-term value after handover.", metric: "Lifecycle performance" },
-  { name: "Project Management", description: "EPC, EPCM, and hybrid delivery with integrated planning, cost, risk, quality, HSE, and stakeholder management.", metric: "EPC / EPCM / Hybrid" },
+  { name: "Engineering", description: "Concept development, detailed engineering, constructability, multidisciplinary coordination and technical support.", metric: "Engineering for execution" },
+  { name: "Procurement", description: "Strategic sourcing, vendor management, logistics, material compliance and supply-chain coordination.", metric: "Strategic supply chain" },
+  { name: "Construction", description: "Civil, structural, industrial, MEP and infrastructure execution supported by disciplined site management.", metric: "Complex project environments" },
+  { name: "Commissioning", description: "Testing, system verification, performance validation and operational readiness.", metric: "Verified performance" },
+  { name: "Handover", description: "Documentation, final acceptance, system turnover and coordinated project closeout.", metric: "Structured turnover" },
+  { name: "Operations & Maintenance", description: "Preventive and corrective maintenance, performance support and lifecycle asset services.", metric: "Lifecycle support" },
 ] as const;
 
 export const projects = [
-  { id: "oil-gas", title: "Oil & Gas", category: "Energy", location: "Upstream and downstream", year: "EPC / EPCM", partner: "Integrated project delivery", description: "Engineering and construction capability for production, processing, storage, pipeline, and supporting facilities across the oil and gas value chain.", image: "/images/gallery-4.jpg", featured: true },
-  { id: "power", title: "Power", category: "Energy Infrastructure", location: "Generation and networks", year: "Full lifecycle", partner: "Reliable critical assets", description: "Delivery support for power generation, substations, transmission, distribution, and the infrastructure required for resilient energy systems.", image: "/images/gallery-1.jpg", featured: true },
-  { id: "petrochemical", title: "Petrochemical", category: "Process Industries", location: "Complex process facilities", year: "EPC / EPCM", partner: "Quality-led execution", description: "Integrated delivery for process plants and associated utilities, with close control of interfaces, quality, safety, and commissioning.", image: "/images/service-energy.jpg", featured: false },
-  { id: "utilities", title: "Utilities", category: "Essential Infrastructure", location: "Water and utility systems", year: "Lifecycle services", partner: "Resilient operations", description: "Infrastructure for essential utility systems, combining engineering discipline with dependable construction and operational support.", image: "/images/gallery-3.jpg", featured: false },
-  { id: "mining-industrial", title: "Mining & Industrial", category: "Industrial Development", location: "Production facilities", year: "Integrated delivery", partner: "National growth sectors", description: "Project delivery for mining, manufacturing, and industrial facilities that support the Kingdom's economic diversification agenda.", image: "/images/service-industrial.jpg", featured: false },
-  { id: "digital", title: "Digital Infrastructure", category: "Future Infrastructure", location: "Mission-critical facilities", year: "EPC solutions", partner: "Scalable and resilient", description: "Engineering, project management, and EPC solutions for data centres and other mission-critical infrastructure supporting digital growth.", image: "/images/gallery-2.jpg", featured: false },
+  { id: "amiral", title: "AMIRAL — Package 6", category: "Petrochemicals / Industrial", location: "Jubail, Saudi Arabia", year: "Ongoing", partner: "EPC package delivery", description: "Multidisciplinary project execution supporting the AMIRAL development and demonstrating energy-sector delivery and quality-management performance.", image: "/images/generated/saudi-energy-hero.png", featured: true, showPhoto: true },
+  { id: "mssd-spark", title: "MSSD — SPARK", category: "Industrial / Energy Infrastructure", location: "King Salman Energy Park, Eastern Province", year: "Project delivery", partner: "Construction & Infrastructure", description: "Multidisciplinary construction and project execution within one of Saudi Arabia's key energy ecosystems, with 99.09% waste diversion reported.", image: "/images/generated/industrial-utilities.png", featured: true, showPhoto: true },
+  { id: "mssd-jeddah", title: "MSSD — Jeddah", category: "Industrial Infrastructure", location: "Jeddah, Saudi Arabia", year: "Project delivery", partner: "Construction & Infrastructure", description: "Construction and infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/jeddah-infrastructure.png", featured: false, showPhoto: true },
+  { id: "ras-tanura", title: "Ras Tanura Project", category: "Oil & Gas / Energy", location: "Ras Tanura, Eastern Province", year: "Project delivery", partner: "Energy infrastructure", description: "Energy infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/coastal-energy.png", featured: false, showPhoto: true },
+  { id: "neom", title: "NEOM Infrastructure", category: "Strategic Infrastructure", location: "Northwestern Saudi Arabia", year: "Strategic development", partner: "Civil & Infrastructure", description: "Civil works, site development, utility infrastructure and associated project execution supporting one of the Kingdom's most significant strategic developments.", image: "/images/generated/northwest-infrastructure.png", featured: false, showPhoto: true },
+  { id: "railway", title: "Railway Infrastructure", category: "Transportation", location: "Saudi Arabia", year: "MASCO heritage", partner: "Major Infrastructure", description: "Railway infrastructure delivery and associated civil works across track engineering, rail laying, signaling systems and infrastructure foundations.", image: "/images/generated/railway-infrastructure.png", featured: false, showPhoto: true },
 ] as const;
 
 export const pillars = [
-  { title: "Safety", text: "Every task is planned and executed with care for people, assets, communities, and the environment." },
-  { title: "Quality & Reliability", text: "Strong governance, controlled processes, and disciplined assurance protect delivery quality and dependable outcomes." },
-  { title: "Integrity", text: "Professional conduct, accountability, and transparent communication guide relationships with clients, partners, and teams." },
-  { title: "Innovation & Sustainability", text: "Practical innovation and responsible delivery improve performance while supporting the Kingdom's long-term development priorities." },
+  { title: "Integrity", text: "We act transparently, ethically and responsibly in every commitment." },
+  { title: "Safety", text: "We protect our people, partners, communities and assets through disciplined safety practices." },
+  { title: "Quality", text: "We maintain rigorous standards across every stage of project delivery." },
+  { title: "Accountability", text: "We take ownership of our decisions, commitments and performance." },
+  { title: "Partnership", text: "We build lasting relationships through collaboration, trust and shared success." },
+  { title: "Innovation", text: "We continuously improve how we engineer, execute and deliver." },
+] as const;
+
+export const specializedBusinesses = [
+  {
+    name: "MASCO Pipelines",
+    eyebrow: "Specialized Pipeline Expertise",
+    description: "A joint venture between MASCO Energy and CIS Gaz Arabia delivering specialized pipeline solutions for Saudi Arabia's energy and industrial sectors.",
+    capabilities: ["Pipeline EPCC", "Specialized construction", "Operations & maintenance"],
+    image: "/images/profile/masco-pipelines-logo-white.png",
+    photo: "/images/generated/pipeline-corridor.png",
+    metrics: ["+1,500 km pipelines constructed", "+35 years pipeline experience", "4 countries", "+280 projects completed"],
+  },
+  {
+    name: "Lumeron",
+    eyebrow: "Digital Infrastructure",
+    description: "A MASCO Energy company extending the portfolio into digital infrastructure, connectivity and technology solutions for modern industrial and infrastructure environments.",
+    capabilities: ["Digital infrastructure", "Connectivity & fiber", "Systems integration", "Control & intelligent systems"],
+    image: "/images/profile/lumeron-logo-white.png",
+    photo: "/images/generated/digital-infrastructure.png",
+    metrics: [],
+  },
+] as const;
+
+export const sustainability = [
+  { value: "99.09%", title: "Waste Diversion", text: "Reported at MSSD / SPARK through controlled waste segregation and recovery practices." },
+  { value: "100%", title: "Treated Wastewater Recycled", text: "On-site recycling supporting zero-discharge practices within the referenced project." },
+  { value: "Measured", title: "Energy & Carbon", text: "Project-level monitoring of energy consumption and carbon emissions." },
+  { value: "Integrated", title: "Renewable Energy", text: "Renewable energy applications incorporated where relevant to project environments." },
+] as const;
+
+export const peopleCommitments = [
+  { title: "National Talent Development", text: "Developing Saudi engineers, specialists, project professionals and future leaders." },
+  { title: "Learning & Development", text: "On-the-job training, cooperative training, Tamheer, technical apprenticeships and professional certification." },
+  { title: "Local Supply Chain", text: "Supporting qualified Saudi manufacturers, suppliers and subcontractors where appropriate." },
+  { title: "Knowledge Transfer", text: "Project exposure, technical mentoring and specialized training for long-term national capability." },
+] as const;
+
+export const clientLogos = [
+  { name: "Saudi Aramco", image: "/images/profile/client-saudi-aramco.png" },
+  { name: "SATORP", image: "/images/profile/client-satorp.png" },
+  { name: "Ma'aden", image: "/images/profile/client-maaden.png" },
+  { name: "NEOM", image: "/images/profile/client-neom.png" },
+  { name: "Royal Commission for Jubail & Yanbu", image: "/images/profile/client-royal-commission.png" },
 ] as const;
 
 export type StatItem = { id: string; value: string; label: string; metric: KpiMetric };
@@ -64,7 +130,7 @@ export type StatItem = { id: string; value: string; label: string; metric: KpiMe
 function toStatItems(ids: readonly string[]): StatItem[] {
   return getKpisByIds(ids).map((metric) => ({
     id: metric.id,
-    value: `${metric.prefix ?? ""}${metric.decimals !== undefined ? metric.value.toFixed(metric.decimals) : metric.value.toLocaleString()}${metric.suffix ?? ""}`,
+    value: (metric.prefix ?? "") + (metric.decimals !== undefined ? metric.value.toFixed(metric.decimals) : metric.value.toLocaleString()) + (metric.suffix ?? ""),
     label: metric.label,
     metric,
   }));
@@ -80,24 +146,26 @@ export const statsByTheme = {
 } as const;
 
 export const faqs = [
-  { question: "What does MASCO Energy do?", answer: "MASCO Energy provides integrated engineering, procurement, construction, commissioning, operations, and maintenance services for energy and industrial infrastructure." },
-  { question: "Which sectors does MASCO Energy serve?", answer: "The company serves power, oil and gas, petrochemical, utilities, mining, industrial facilities, and digital infrastructure across the Kingdom of Saudi Arabia." },
-  { question: "Which delivery models are available?", answer: "MASCO Energy delivers through EPC, EPCM, and hybrid models selected around project scope, risk allocation, schedule, and client governance requirements." },
-  { question: "What guides project delivery?", answer: "Safety, quality, reliability, integrity, innovation, sustainability, and operational excellence guide decisions throughout the project lifecycle." },
-  { question: "How can I contact MASCO Energy?", answer: "Use the contact details in the footer or visit masco.com.sa for corporate, partnership, project, and career enquiries." },
+  { question: "What does MASCO Energy do?", answer: "MASCO Energy delivers integrated EPC solutions spanning engineering, procurement, construction, commissioning, handover, operations and maintenance." },
+  { question: "Which markets does MASCO Energy serve?", answer: "The company serves oil and gas, petrochemicals, power and energy, mining and industrial, utilities, and strategic infrastructure markets." },
+  { question: "Where does MASCO Energy operate?", answer: "Its project footprint spans major developments across Saudi Arabia, including Jubail, Ras Tanura, SPARK, Al Khobar, Jeddah and NEOM." },
+  { question: "What specialized businesses are part of the platform?", answer: "MASCO Pipelines provides specialized pipeline expertise, while Lumeron extends the group into digital infrastructure and technology solutions." },
+  { question: "How can I contact MASCO Energy?", answer: "Email info@masco.com.sa or visit masco.com.sa. The company is based in Al Khobar, Eastern Province, Kingdom of Saudi Arabia." },
 ] as const;
 
 export const highlights = [
-  { quote: "One integrated team connects engineering decisions, procurement control, field execution, commissioning, and lifecycle support.", author: "Integrated Delivery", company: "End-to-end project accountability" },
-  { quote: "Safety and quality are built into planning, governance, assurance, and execution at every stage of the project.", author: "Responsible Execution", company: "People, assets, and performance" },
-  { quote: "Saudi market knowledge and global supply-chain reach are combined to deliver resilient infrastructure and long-term value.", author: "Local Strength", company: "Built for the Kingdom's priorities" },
+  { quote: "Deliver safely, execute with discipline, and create lasting value for our clients.", author: "Eng. Omar M. Algethaan", company: "Chief Executive Officer" },
+  { quote: "One integrated approach from concept to operation.", author: "Integrated EPC Delivery", company: "Engineering through operations and maintenance" },
+  { quote: "Built on experience. Focused on energy.", author: "MASCO Energy", company: "Engineering progress. Delivering with purpose." },
 ] as const;
 
 export const processSteps = [
-  { step: "01", title: "Engineering", text: "Define the technical solution, execution basis, interfaces, constructability, and controls required for safe and efficient delivery." },
-  { step: "02", title: "Procurement", text: "Qualify suppliers, manage technical and commercial packages, inspect equipment, expedite manufacture, and coordinate logistics." },
-  { step: "03", title: "Construction", text: "Execute field works through disciplined planning, HSE leadership, quality assurance, schedule control, and transparent reporting." },
-  { step: "04", title: "Commissioning & Handover", text: "Complete systems, verify performance, prepare operations, transfer knowledge, and support a controlled transition into service." },
+  { step: "01", title: "Engineering", text: "Concept development, detailed engineering, constructability, multidisciplinary coordination and technical support." },
+  { step: "02", title: "Procurement", text: "Strategic sourcing, vendor management, logistics, material compliance and supply-chain coordination." },
+  { step: "03", title: "Construction", text: "Civil, structural, industrial, MEP and infrastructure execution supported by disciplined site management." },
+  { step: "04", title: "Commissioning", text: "Testing, system verification, performance validation and operational readiness." },
+  { step: "05", title: "Handover", text: "Documentation, final acceptance, system turnover and coordinated project closeout." },
+  { step: "06", title: "Operations & Maintenance", text: "Preventive and corrective maintenance, performance support and lifecycle asset services." },
 ] as const;
 
 export const testimonials = highlights;

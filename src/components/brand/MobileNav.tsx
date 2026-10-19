@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { ContactUsButton } from "@/components/brand/ContactUsButton";
 import { MascoLogo } from "@/components/brand/MascoLogo";
 
 type NavItem = {
@@ -84,7 +83,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
             </ul>
 
             <div className="border-t border-masco-navy/10 px-4 py-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
-              <ContactUsButton />
+              <Link href="#contact" onClick={() => setOpen(false)} className="masco-gradient block rounded-full px-5 py-3 text-center text-sm font-bold text-white">Contact Us</Link>
             </div>
           </nav>
         </div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
+import { images, type ServiceName } from "@/lib/images";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
 import { services } from "@/lib/home-content";
-import { images, type ServiceName } from "@/lib/images";
 import { IconBox, serviceIcons } from "@/lib/icons";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
@@ -60,14 +60,14 @@ export function ServicesSection({
     );
   }
 
-  const showCardImages = layout === "cards";
+  const showCardImages = true;
 
   return (
     <SectionShell id="services" className="bg-white">
       <SectionHeader
         eyebrow="Services"
         title="Our Core Capabilities"
-        description="Six connected capabilities covering the full asset lifecycle, delivered through EPC, EPCM, and hybrid models."
+        description="Six connected capabilities covering the full asset lifecycle through one integrated EPC delivery platform."
       />
 
       <div
@@ -79,25 +79,12 @@ export function ServicesSection({
       >
         {services.map((service, index) => {
           const Icon = serviceIcons[service.name];
-          const imageSrc =
-            images.services[service.name as ServiceName] ??
-            images.services.Engineering;
 
           return (
             <AnimateIn key={service.name} delay={index * 0.06}>
               <article className="masco-card group h-full overflow-hidden">
-                {showCardImages && (
-                  <div className="relative aspect-[16/10] overflow-hidden">
-                    <Image
-                      src={imageSrc}
-                      alt={service.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-masco-navy/50 to-transparent" />
-                  </div>
-                )}
+                <div className="relative aspect-[16/10] overflow-hidden"><Image src={images.services[service.name as ServiceName]} alt={`Illustrative ${service.name.toLowerCase()} capability`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" /></div>
+
                 <div className="p-6 md:p-8">
                   {Icon && (
                     <IconBox

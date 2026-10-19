@@ -25,7 +25,7 @@ export const homeVariants = [
   {
     slug: "services",
     title: "Services Grid",
-    direction: "Card-based sector overview with icon placeholders and metrics",
+    direction: "Capability-led layouts with technical detail, project filters and delivery assurance",
   },
   {
     slug: "split",

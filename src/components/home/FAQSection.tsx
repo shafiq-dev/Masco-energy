@@ -18,7 +18,7 @@ export function FAQSection({ variant = "classic" }: FAQSectionProps) {
           <SectionHeader
             eyebrow="FAQ"
             title="Frequently Asked Questions"
-            description="Common questions about MASCO Energy's services, corporate identity, and partnership approach."
+            description="Common questions about MASCO Energy's integrated capabilities, markets, projects and specialized businesses."
           />
         </div>
 

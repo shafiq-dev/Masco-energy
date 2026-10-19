@@ -1,3 +1,5 @@
+import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
@@ -5,25 +7,30 @@ import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { FAQSection } from "@/components/home/FAQSection";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
+import { CountUp } from "@/components/metrics/CountUp";
 import {
   aboutParagraphs,
   pillars,
   processSteps,
-  projects,
   services,
   visionMission,
 } from "@/lib/home-content";
+import { getKpisByIds } from "@/lib/metrics";
+import { IconBox, pillarIcons } from "@/lib/icons";
+
+const portfolioMetric = getKpisByIds(["portfolio"])[0];
 
 export default function MonumentalHomePage() {
   return (
-    <div className="min-h-screen bg-[#f4f7fa] text-masco-black">
-      <SiteHeader />
+    <div className="theme-monumental min-h-screen bg-[#f4f7fa] text-masco-black">
+      <SiteHeader theme="monumental" />
 
       <main>
         <section id="home" className="px-6 pb-16 pt-10 lg:px-16 lg:pb-24 lg:pt-16">
           <div className="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-12 lg:gap-16">
             <AnimateIn className="lg:col-span-7">
-              <p className="text-xs font-bold uppercase tracking-[0.28em] text-masco-blue">
+              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-masco-blue">
+                <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
                 Saudi EPC &amp; integrated contracting
               </p>
               <h1 className="mt-8 max-w-4xl text-[clamp(3.25rem,8vw,7.6rem)] font-bold leading-[0.88] tracking-[-0.055em] text-masco-navy">
@@ -51,7 +58,7 @@ export default function MonumentalHomePage() {
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="relative min-h-[440px] overflow-hidden rounded-[28px] lg:min-h-[620px]">
                 <Image
-                  src="/images/hero-services.jpg"
+                  src="/images/generated/epc-construction-empty.png"
                   alt="Energy infrastructure delivered by MASCO Energy"
                   fill
                   priority
@@ -60,8 +67,8 @@ export default function MonumentalHomePage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071c31]/85 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
-                  <p className="text-4xl font-bold">60+</p>
-                  <p className="mt-1 text-sm text-white/75">years of contracting experience</p>
+                  <p className="text-4xl font-bold"><CountUp metric={portfolioMetric} /></p>
+                  <p className="mt-1 text-sm text-white/75">project value</p>
                 </div>
               </div>
             </AnimateIn>
@@ -71,10 +78,10 @@ export default function MonumentalHomePage() {
         <section className="border-y border-masco-navy/10 bg-white px-6 py-7 lg:px-16">
           <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 lg:grid-cols-4">
             {[
-              ["3,000+", "Professionals"],
-              ["07", "Core sectors"],
+              ["3,000+", "Workforce"],
+              ["06", "Core markets"],
               ["06", "Integrated capabilities"],
-              ["03", "Delivery models"],
+              ["+10M", "LTI-free hours"],
             ].map(([value, label]) => (
               <div key={label} className="border-l-2 border-masco-blue pl-4">
                 <p className="text-2xl font-bold text-masco-navy md:text-3xl">{value}</p>
@@ -134,39 +141,7 @@ export default function MonumentalHomePage() {
           </div>
         </section>
 
-        <section id="projects" className="bg-white px-6 py-24 lg:px-16 lg:py-32">
-          <div className="mx-auto max-w-7xl">
-            <div className="max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-masco-blue">03 / Sectors</p>
-              <h2 className="mt-5 text-4xl font-bold leading-tight text-masco-navy lg:text-6xl">Essential infrastructure, across seven growth sectors.</h2>
-            </div>
-            <div className="mt-14 grid gap-5 lg:grid-cols-12">
-              {projects.map((project, index) => (
-                <AnimateIn
-                  key={project.id}
-                  className={index < 2 ? "lg:col-span-6" : "lg:col-span-4"}
-                  delay={(index % 3) * 0.05}
-                >
-                  <article className="group relative min-h-[340px] overflow-hidden rounded-[24px] bg-masco-navy">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} sector`}
-                      fill
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#071c31] via-[#071c31]/25 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-6 text-white">
-                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-masco-blue">{project.category}</span>
-                      <h3 className="mt-2 text-2xl font-bold">{project.title}</h3>
-                      <p className="mt-3 max-w-xl text-sm leading-6 text-white/70">{project.description}</p>
-                    </div>
-                  </article>
-                </AnimateIn>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProjectDirectorySection theme="monumental" />
 
         <section className="px-6 py-24 lg:px-16 lg:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
@@ -190,6 +165,7 @@ export default function MonumentalHomePage() {
           <div className="mx-auto mt-20 grid max-w-7xl gap-px overflow-hidden rounded-[24px] bg-masco-navy/10 md:grid-cols-2 lg:grid-cols-4">
             {pillars.map((pillar) => (
               <article key={pillar.title} className="bg-white p-7">
+                {pillarIcons[pillar.title] && <IconBox icon={pillarIcons[pillar.title]} variant="light" size="sm" className="mb-5 rounded-xl" />}
                 <h3 className="font-bold text-masco-navy">{pillar.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-masco-black/60">{pillar.text}</p>
               </article>
@@ -197,10 +173,11 @@ export default function MonumentalHomePage() {
           </div>
         </section>
 
-        <FAQSection variant="minimal" />
+        <ProfileStorySections theme="monumental" />
+      <FAQSection variant="minimal" />
       </main>
 
-      <SiteFooter />
+      <SiteFooter theme="monumental" />
     </div>
   );
 }

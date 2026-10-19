@@ -1,0 +1,90 @@
+{
+  "mode": "built-in image_gen",
+  "note": "All selected generated images are illustrative and people-free. Real company logos and CEO portrait remain original profile assets.",
+  "assets": [
+    {
+      "name": "saudi-energy-hero",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-6936da21-38f4-43f7-ad8a-b051515d0bf9.png",
+      "asset": "/images/generated/saudi-energy-hero.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 corporate website hero photograph for MASCO Energy, a Saudi EPC and industrial infrastructure company. Primary request: premium architectural industrial photography of a large integrated energy and industrial complex in Saudi Arabia's Eastern Province, reflecting engineering, construction, pipe racks, steel structures, process columns and utility infrastructure. Wide elevated three-quarter view, infrastructure fills the frame, subject legible in both landscape and central portrait crops. Natural clear early morning sunlight, realistic steel and concrete, rich but restrained navy and cyan accents from sky and structures, warm desert neutrals. High detail, convincing structural engineering, crisp natural contrast. Entire frame is a photograph. No white fades, no baked gradients, no blue tint, no blank panels, no typography, no logos, no watermarks, no fire, no dramatic pollution. Illustrative scene, not a claim to depict any named actual project."
+    },
+    {
+      "name": "industrial-utilities",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-02036b09-fd90-49cc-822b-4272f7bcd75b.png",
+      "asset": "/images/generated/industrial-utilities.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 illustrative project image for MASCO Energy Saudi EPC website based on its company profile's sectors. High-end architectural photography, natural color and contrast, clear daylight, precise believable civil engineering, warm stone/sand and steel/navy/blue palette. No named client marks, no text, no logos, no watermarks, no washed-out fades, no artificial blue overlays, no borders or montage. This is a representative illustration, not an exact photograph or reconstruction of the named real project. Modern industrial and utility infrastructure in an eastern Saudi energy park. Elevated three-quarter view of a crisp large industrial service building with silver metal cladding, external utility pipe runs and cooling plant, electrical service yard, access roads and carefully organized landscaping on desert terrain. Facilities occupy 80 percent of frame, realistic scale and usable center crop. Supports the MSSD SPARK project card."
+    },
+    {
+      "name": "jeddah-infrastructure",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-2644ba1e-78bf-4938-92c2-7bf38628cc75.png",
+      "asset": "/images/generated/jeddah-infrastructure.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 illustrative project image for MASCO Energy Saudi EPC website based on its company profile's sectors. High-end architectural photography, natural color and contrast, clear daylight, precise believable civil engineering, warm stone/sand and steel/navy/blue palette. No named client marks, no text, no logos, no watermarks, no washed-out fades, no artificial blue overlays, no borders or montage. This is a representative illustration, not an exact photograph or reconstruction of the named real project. Modern industrial construction and utility infrastructure in western Saudi Arabia near Jeddah. Wide low aerial architectural photograph showing a newly built industrial support facility, concrete service roads, drainage channels and buried-utility installation zone, coordinated warehouse structures, a few work vehicles in designated lanes, flat arid coastal environment. Facility and civil infrastructure fill frame, no distinctive real-world landmark. Supports MSSD Jeddah project card."
+    },
+    {
+      "name": "coastal-energy",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-c33e8982-9794-4759-aec1-31ae29690999.png",
+      "asset": "/images/generated/coastal-energy.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 illustrative project image for MASCO Energy Saudi EPC website based on its company profile's sectors. High-end architectural photography, natural color and contrast, clear daylight, precise believable civil engineering, warm stone/sand and steel/navy/blue palette. No named client marks, no text, no logos, no watermarks, no washed-out fades, no artificial blue overlays, no borders or montage. This is a representative illustration, not an exact photograph or reconstruction of the named real project. Coastal Saudi oil and gas energy infrastructure, wide elevated photograph over orderly cylindrical storage tanks, large silver pipelines, pump stations and steel process platforms, Arabian Gulf blue sea visible in the background, warm arid coastal terrain. Realistic safe modern facility with excellent photographic clarity, storage and pipe network occupy majority of frame. Supports Ras Tanura energy project card."
+    },
+    {
+      "name": "northwest-infrastructure",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-79f27260-f75b-4e9d-b056-0e50aa81a59e.png",
+      "asset": "/images/generated/northwest-infrastructure.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 illustrative project image for MASCO Energy Saudi EPC website based on its company profile's sectors. High-end architectural photography, natural color and contrast, clear daylight, precise believable civil engineering, warm stone/sand and steel/navy/blue palette. No named client marks, no text, no logos, no watermarks, no washed-out fades, no artificial blue overlays, no borders or montage. This is a representative illustration, not an exact photograph or reconstruction of the named real project. Strategic civil infrastructure in northwestern Saudi Arabia: wide elevated view of a contemporary utility corridor and new service road curving through rugged reddish desert mountains. Concrete drainage channels, retaining structures, orderly civil earthworks and modest utility enclosures. Grounded current civil engineering, no fantasy skyscrapers, no futuristic city, no speculative architecture. Infrastructure fills image with dramatic natural regional landscape. Supports NEOM infrastructure project card."
+    },
+    {
+      "name": "engineering-design-empty",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-53e118c5-9b02-477e-96d0-0c8c5bac2870.png",
+      "asset": "/images/generated/engineering-design-empty.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 corporate website photograph for Saudi EPC and industrial infrastructure company MASCO Energy. Premium natural architectural photography, rich clear detail, blue/navy steel and warm desert neutral palette, no faded sections, no gradients, no text, logos or watermark. STRICT: absolutely no people, no persons, no faces, no human silhouettes anywhere in frame. Empty spaces and equipment only. Subject fills frame, central crop remains meaningful. An unoccupied engineering design studio with a large monitor displaying a plausible detailed industrial steel-frame BIM model, rolled and unfolded civil engineering drawings, neatly placed technical instruments, a physical structural model. Daylight from windows, focus on design tools and monitor. No chairs blocking foreground. No people even on screens."
+    },
+    {
+      "name": "procurement-logistics-empty",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-584a27ed-b0f4-4535-873a-ac2bfa9b8da6.png",
+      "asset": "/images/generated/procurement-logistics-empty.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 corporate website photograph for Saudi EPC and industrial infrastructure company MASCO Energy. Premium natural architectural photography, rich clear detail, blue/navy steel and warm desert neutral palette, no faded sections, no gradients, no text, logos or watermark. STRICT: absolutely no people, no persons, no faces, no human silhouettes anywhere in frame. Empty spaces and equipment only. Subject fills frame, central crop remains meaningful. An organized industrial materials yard and warehouse in Saudi Arabia. Steel pipes stacked in safe cradles, flanged valve assemblies on orderly pallets and metal storage racks, a parked forklift in an empty designated lane. Bright clear sunlight, natural materials, warehouse and equipment fill image. No people or operators."
+    },
+    {
+      "name": "technical-training-empty",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-e99cda08-b322-4d0e-b2d3-a727b5afc9c5.png",
+      "asset": "/images/generated/technical-training-empty.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 corporate website photograph for Saudi EPC and industrial infrastructure company MASCO Energy. Premium natural architectural photography, rich clear detail, blue/navy steel and warm desert neutral palette, no faded sections, no gradients, no text, logos or watermark. STRICT: absolutely no people, no persons, no faces, no human silhouettes anywhere in frame. Empty spaces and equipment only. Subject fills frame, central crop remains meaningful. An empty modern technical training laboratory with a detailed miniature industrial piping training rig in foreground, mechanical cutaway components, workbenches and schematic drawings, blue storage cabinets and bright natural daylight, contemporary Saudi industrial training center. Show national capability development through learning equipment, not people."
+    },
+    {
+      "name": "epc-construction-empty",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-eb64a918-d7de-4d5e-a56b-dca677007334.png",
+      "asset": "/images/generated/epc-construction-empty.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed 16:9 corporate website photograph for Saudi EPC and industrial infrastructure company MASCO Energy. Premium natural architectural photography, rich clear detail, blue/navy steel and warm desert neutral palette, no faded sections, no gradients, no text, logos or watermark. STRICT: absolutely no people, no persons, no faces, no human silhouettes anywhere in frame. Empty spaces and equipment only. Subject fills frame, central crop remains meaningful. A large empty Saudi industrial construction site from an elevated viewpoint: concrete foundations, partially completed steel-frame processing buildings, pipe racks and parked cranes against desert terrain. All construction machinery stationary and unoccupied. Strong realistic engineering geometry and architectural leading lines, golden morning light, no tiny workers in background."
+    },
+    {
+      "name": "railway-infrastructure",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-d0d480ea-376a-4816-8cbf-3cf8c5095963.png",
+      "asset": "/images/generated/railway-infrastructure.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed landscape 16:9 corporate website image for MASCO Energy Saudi EPC company. Premium architectural/industrial photography, realistic geometry and technical materials, sharp natural contrast, navy/cyan and warm desert neutrals. No text, no logos, no watermark, no white fading, no baked gradients, no collage. STRICT: absolutely no people, persons, faces, silhouettes or workers, even in the background or on screens. Only equipment and facilities. Railway infrastructure heritage: modern double railway track with concrete sleepers, clean ballast bed, signaling cabinets and a modest rail bridge through flat Saudi desert. Wide perspective with elegant leading lines and low distant mountains, early morning sunlight. No trains, no cars, no people. Representative infrastructure rather than any identifiable real project."
+    },
+    {
+      "name": "commissioning-systems",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-20ec0529-7c5f-4853-9fd6-7c743c32f034.png",
+      "asset": "/images/generated/commissioning-systems.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed landscape 16:9 corporate website image for MASCO Energy Saudi EPC company. Premium architectural/industrial photography, realistic geometry and technical materials, sharp natural contrast, navy/cyan and warm desert neutrals. No text, no logos, no watermark, no white fading, no baked gradients, no collage. STRICT: absolutely no people, persons, faces, silhouettes or workers, even in the background or on screens. Only equipment and facilities. Commissioning and operational readiness: a clean empty industrial pump and control-system room in a Saudi process facility. Orderly blue centrifugal pumps on engineered bases, silver process pipes, flanged valves, pressure gauges, cable trays and closed electrical control cabinets. Clear realistic plant design, medium-wide angle, well-lit modern maintenance environment. No people, no hands, no tiny workers."
+    },
+    {
+      "name": "pipeline-corridor",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-1f8d91c7-a0cc-4997-96b7-519132d14959.png",
+      "asset": "/images/generated/pipeline-corridor.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed landscape 16:9 corporate website image for MASCO Energy Saudi EPC company. Premium architectural/industrial photography, realistic geometry and technical materials, sharp natural contrast, navy/cyan and warm desert neutrals. No text, no logos, no watermark, no white fading, no baked gradients, no collage. STRICT: absolutely no people, persons, faces, silhouettes or workers, even in the background or on screens. Only equipment and facilities. Specialized pipeline EPCC in Saudi Arabia: wide aerial photograph of a large-diameter coated steel transmission pipeline on evenly spaced supports, with a neatly assembled valve and metering station in foreground and flat desert extending into the distance. Detailed weld joints and believable pipe supports. Warm dawn light, bold geometric composition. No workers or people. Illustrative capabilities image for MASCO Pipelines."
+    },
+    {
+      "name": "digital-infrastructure",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-5d3d902b-8b8a-4a65-8bc4-8cc0add3b73d.png",
+      "asset": "/images/generated/digital-infrastructure.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed landscape 16:9 corporate website image for MASCO Energy Saudi EPC company. Premium architectural/industrial photography, realistic geometry and technical materials, sharp natural contrast, navy/cyan and warm desert neutrals. No text, no logos, no watermark, no white fading, no baked gradients, no collage. STRICT: absolutely no people, persons, faces, silhouettes or workers, even in the background or on screens. Only equipment and facilities. Digital infrastructure and systems integration: an empty immaculate industrial data and network equipment room, orderly server racks with subtle blue indicator lights, visible structured fiber patch panels and neatly managed optical cables, a clean central aisle. Restrained realistic technology photography, not sci-fi, no holograms, no text on cabinets, no screens containing people. For Lumeron digital capability."
+    },
+    {
+      "name": "water-recycling",
+      "source": "C:\\Users\\shafi\\.codex\\generated_images\\01a15280-1afc-7080-af7d-5eb719df6c21\\exec-2bc02b3c-eee5-4c79-a374-ca06aa2b8c79.png",
+      "asset": "/images/generated/water-recycling.png",
+      "prompt": "Use case: photorealistic-natural. Asset type: full-bleed landscape 16:9 corporate website image for MASCO Energy Saudi EPC company. Premium architectural/industrial photography, realistic geometry and technical materials, sharp natural contrast, navy/cyan and warm desert neutrals. No text, no logos, no watermark, no white fading, no baked gradients, no collage. STRICT: absolutely no people, persons, faces, silhouettes or workers, even in the background or on screens. Only equipment and facilities. Responsible project delivery and treated wastewater recycling: modern empty compact industrial water-recycling installation in arid Saudi landscape, clean circular clarifier tanks, stainless process piping, blue pump skids, filtration vessels and orderly paved access paths. Wide architectural view, bright natural morning light, realistic water engineering, calm and precise. No people, no speculative claims or labels."
+    }
+  ]
+}

@@ -3,7 +3,6 @@ import {
   Briefcase,
   CircleHelp,
   Factory,
-  Globe2,
   Handshake,
   Home,
   Info,
@@ -26,12 +25,17 @@ export const serviceIcons: Record<string, LucideIcon> = {
   Procurement: Search,
   Construction: Factory,
   Commissioning: Rocket,
+  Handover: BadgeCheck,
   "Operations & Maintenance": Wrench,
   "Project Management": Briefcase,
 };
 
 export const pillarIcons: Record<string, LucideIcon> = {
   Safety: ShieldCheck,
+  Quality: BadgeCheck,
+  Accountability: Briefcase,
+  Partnership: Handshake,
+  Innovation: Layers,
   "Quality & Reliability": BadgeCheck,
   Integrity: Handshake,
   "Innovation & Sustainability": Layers,
@@ -42,19 +46,17 @@ export const processIcons: Record<string, LucideIcon> = {
   Procurement: Search,
   Construction: Factory,
   "Commissioning & Handover": Rocket,
+  Commissioning: Rocket,
+  Handover: BadgeCheck,
+  "Operations & Maintenance": Wrench,
 };
 
 export const kpiIcons: Record<string, LucideIcon> = {
-  legacy: TrendingUp,
+  portfolio: TrendingUp,
+  lti: ShieldCheck,
+  markets: Factory,
   workforce: Users,
-  sectors: Factory,
-  capabilities: Wrench,
-  models: Layers,
-  kingdom: Globe2,
 };
-
-/** @deprecated Use kpiIcons with stat.id */
-export const statIcons: Record<string, LucideIcon> = kpiIcons;
 
 export const navIcons: Record<string, LucideIcon> = {
   Home,

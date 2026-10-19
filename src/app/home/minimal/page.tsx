@@ -1,3 +1,4 @@
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -17,12 +18,13 @@ import { AnimateIn } from "@/components/metrics/AnimateIn";
 
 export default function MinimalHomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader />
+    <div className="flex min-h-screen flex-col bg-white theme-minimal">
+      <SiteHeader theme="minimal" />
 
+      <main className="flex-1">
       <HeroBanner
         variant="minimal"
-        subtitle="Building for Better Life"
+        subtitle="Engineering Progress. Delivering with Purpose."
         title="Saudi EPC excellence across energy & industrial sectors"
         description={aboutParagraphs[0]}
         primaryCta={{ label: "Our Story", href: "#about" }}
@@ -61,11 +63,14 @@ export default function MinimalHomePage() {
         </div>
       </SectionShell>
 
-      <ProjectDirectorySection />
+      <ProjectDirectorySection theme="minimal" />
       <ProcessSection />
       <TestimonialsSection layout="quote" />
+      <ProfileStorySections theme="minimal" />
       <FAQSection variant="minimal" />
-      <SiteFooter />
+      </main>
+
+      <SiteFooter theme="minimal" />
     </div>
   );
 }

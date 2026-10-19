@@ -1,6 +1,12 @@
+# Netlify builds on Linux and publishes the standard `.next` output that
+# @netlify/plugin-nextjs expects. The timestamped `.next-release-*` folder used
+# by `npm run build` locally is a Windows build-lock workaround and is not used here.
 [build]
-  command = "npm run build"
+  command = "npx next build --webpack"
   publish = ".next"
+
+[build.environment]
+  NEXT_DIST_DIR = ".next"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

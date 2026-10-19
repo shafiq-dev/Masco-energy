@@ -3,7 +3,7 @@ import { CountUp } from "@/components/metrics/CountUp";
 import { getKpisByIds } from "@/lib/metrics";
 
 export function MinimalMetricRail() {
-  const metrics = getKpisByIds(["legacy", "workforce", "capabilities"]);
+  const metrics = getKpisByIds(["portfolio", "workforce", "markets"]);
 
   return (
     <section className="border-b border-masco-navy/10 bg-white px-6 py-16 lg:px-16">

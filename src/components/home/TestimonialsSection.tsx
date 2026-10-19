@@ -1,7 +1,5 @@
-import Image from "next/image";
 import { Quote } from "lucide-react";
 import { testimonials } from "@/lib/home-content";
-import { images } from "@/lib/images";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 
@@ -33,15 +31,6 @@ export function TestimonialsSection({
               &ldquo;{testimonials[0].quote}&rdquo;
             </blockquote>
             <div className="mt-8 flex items-center gap-4 border-t border-masco-navy/10 pt-6">
-              <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-[20px]">
-                <Image
-                  src={images.testimonials[0]}
-                  alt={testimonials[0].author}
-                  fill
-                  className="object-cover"
-                  sizes="56px"
-                />
-              </div>
               <div>
                 <p className="text-sm font-bold text-masco-blue">
                   {testimonials[0].author}
@@ -75,15 +64,6 @@ export function TestimonialsSection({
             &ldquo;{featured.quote}&rdquo;
           </p>
           <div className="mt-8 flex items-center gap-4">
-            <div className="relative h-12 w-12 overflow-hidden rounded-[20px]">
-              <Image
-                src={images.testimonials[0]}
-                alt={featured.author}
-                fill
-                className="object-cover"
-                sizes="48px"
-              />
-            </div>
             <div>
               <p className="font-bold text-masco-navy">{featured.author}</p>
               <p className="text-xs text-masco-black/50">{featured.company}</p>
@@ -92,21 +72,12 @@ export function TestimonialsSection({
         </article>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:col-span-5 lg:grid-cols-1">
-          {others.map((item, index) => (
+          {others.map((item) => (
             <article key={item.author} className="masco-card p-6">
               <p className="text-sm leading-relaxed text-masco-black/65">
                 &ldquo;{item.quote}&rdquo;
               </p>
               <div className="mt-5 flex items-center gap-3 border-t border-masco-navy/10 pt-4">
-                <div className="relative h-10 w-10 overflow-hidden rounded-[20px]">
-                  <Image
-                    src={images.testimonials[index + 1]}
-                    alt={item.author}
-                    fill
-                    className="object-cover"
-                    sizes="40px"
-                  />
-                </div>
                 <div>
                   <p className="text-sm font-bold text-masco-navy">
                     {item.author}

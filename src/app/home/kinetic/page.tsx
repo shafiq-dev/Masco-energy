@@ -1,23 +1,29 @@
+import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDownRight, ArrowRight, CircleCheck } from "lucide-react";
+import { ArrowDownRight, ArrowRight } from "lucide-react";
 import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { FAQSection } from "@/components/home/FAQSection";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
+import { CountUp } from "@/components/metrics/CountUp";
 import {
   aboutParagraphs,
   pillars,
   processSteps,
-  projects,
   services,
   visionMission,
 } from "@/lib/home-content";
+import { getKpisByIds } from "@/lib/metrics";
+import { IconBox, pillarIcons } from "@/lib/icons";
+
+const marketsMetric = getKpisByIds(["markets"])[0];
 
 export default function KineticHomePage() {
   return (
-    <div className="min-h-screen bg-[#071c31] text-white">
-      <SiteHeader />
+    <div className="theme-kinetic min-h-screen bg-[#071c31] text-white">
+      <SiteHeader theme="kinetic" />
 
       <main>
         <section
@@ -32,7 +38,7 @@ export default function KineticHomePage() {
           <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-12">
             <AnimateIn className="lg:col-span-7">
               <div className="inline-flex items-center gap-3 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-white/70 backdrop-blur-md">
-                <span className="h-2 w-2 rounded-full bg-masco-blue" />
+                <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
                 Integrated project delivery
               </div>
               <h1 className="mt-8 text-[clamp(3.4rem,8.5vw,8rem)] font-bold leading-[0.88] tracking-[-0.06em]">
@@ -52,7 +58,7 @@ export default function KineticHomePage() {
                   href="#projects"
                   className="inline-flex items-center gap-3 rounded-full border border-white/20 px-7 py-4 text-sm font-bold transition-colors duration-200 hover:bg-white/8"
                 >
-                  Explore sectors
+                  Explore projects
                 </Link>
               </div>
             </AnimateIn>
@@ -64,7 +70,7 @@ export default function KineticHomePage() {
                 <div className="absolute inset-[31%] rounded-full bg-masco-blue/10 shadow-[0_0_90px_rgba(22,145,207,.24)] backdrop-blur-md" />
                 <div className="absolute inset-0 flex items-center justify-center text-center">
                   <div>
-                    <p className="text-6xl font-bold">06</p>
+                    <p className="text-6xl font-bold"><CountUp metric={marketsMetric} minimumDigits={2} /></p>
                     <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/50">connected capabilities</p>
                   </div>
                 </div>
@@ -83,10 +89,10 @@ export default function KineticHomePage() {
 
         <section className="border-y border-white/10 bg-white/[0.035] px-6 py-6 lg:px-16">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 text-xs font-bold uppercase tracking-[0.18em] text-white/55">
-            <span>60+ years of experience</span>
-            <span>3,000+ professionals</span>
-            <span>7 core sectors</span>
-            <span>EPC / EPCM / hybrid</span>
+            <span>+4.5B project value</span>
+            <span>3,000+ workforce</span>
+            <span>6 core markets</span>
+            <span>Integrated EPC delivery</span>
           </div>
         </section>
 
@@ -126,7 +132,7 @@ export default function KineticHomePage() {
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12 lg:items-center">
             <AnimateIn className="lg:col-span-6">
               <div className="relative min-h-[520px] overflow-hidden rounded-[28px]">
-                <Image src="/images/about.jpg" alt="MASCO Energy infrastructure team" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+                <Image src="/images/generated/commissioning-systems.png" alt="Illustrative industrial commissioning systems" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071c31]/90 via-transparent to-transparent" />
                 <div className="absolute bottom-0 p-8">
                   <p className="text-xs font-bold uppercase tracking-[0.2em] text-masco-blue">Built for the Kingdom</p>
@@ -146,32 +152,7 @@ export default function KineticHomePage() {
           </div>
         </section>
 
-        <section id="projects" className="bg-[#eef5f9] px-6 py-24 text-masco-black lg:px-16 lg:py-32">
-          <div className="mx-auto max-w-7xl">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-masco-blue">Sector network</p>
-            <div className="mt-5 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-              <h2 className="max-w-3xl text-4xl font-bold leading-tight text-masco-navy lg:text-6xl">Seven sectors. One standard of delivery.</h2>
-              <p className="max-w-md text-sm leading-7 text-masco-black/60">From energy systems to mission-critical digital facilities, MASCO Energy connects specialist knowledge with consistent controls.</p>
-            </div>
-            <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map((project, index) => (
-                <AnimateIn key={project.id} delay={(index % 3) * 0.05}>
-                  <article className="group flex min-h-[290px] flex-col justify-between rounded-[22px] border border-masco-navy/10 bg-white p-7 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-1 hover:shadow-xl">
-                    <div className="flex items-start justify-between">
-                      <span className="text-sm font-bold text-masco-blue">0{index + 1}</span>
-                      <ArrowDownRight className="h-5 w-5 text-masco-navy/25 transition-transform duration-200 group-hover:rotate-[-45deg] group-hover:text-masco-blue" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.15em] text-masco-black/40">{project.category}</p>
-                      <h3 className="mt-2 text-2xl font-bold text-masco-navy">{project.title}</h3>
-                      <p className="mt-3 text-sm leading-7 text-masco-black/60">{project.description}</p>
-                    </div>
-                  </article>
-                </AnimateIn>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProjectDirectorySection theme="kinetic" />
 
         <section className="bg-white px-6 py-24 text-masco-black lg:px-16 lg:py-32">
           <div className="mx-auto grid max-w-7xl gap-14 lg:grid-cols-2">
@@ -192,7 +173,7 @@ export default function KineticHomePage() {
               <div className="mt-8 space-y-6">
                 {pillars.map((pillar) => (
                   <div key={pillar.title} className="flex gap-4 border-t border-white/10 pt-6">
-                    <CircleCheck className="mt-0.5 h-5 w-5 shrink-0 text-masco-blue" />
+                    {pillarIcons[pillar.title] && <IconBox icon={pillarIcons[pillar.title]} variant="blue" size="sm" className="rounded-xl" />}
                     <div><h3 className="font-bold">{pillar.title}</h3><p className="mt-2 text-sm leading-7 text-white/55">{pillar.text}</p></div>
                   </div>
                 ))}
@@ -201,10 +182,11 @@ export default function KineticHomePage() {
           </div>
         </section>
 
+        <ProfileStorySections theme="kinetic" />
         <div className="bg-white text-masco-black"><FAQSection variant="classic" /></div>
       </main>
 
-      <SiteFooter />
+      <SiteFooter theme="kinetic" />
     </div>
   );
 }

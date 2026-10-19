@@ -1,9 +1,7 @@
 import { AnimateIn } from "@/components/metrics/AnimateIn";
-import { SectionImage } from "@/components/home/SectionImage";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 import { processSteps } from "@/lib/home-content";
-import { images } from "@/lib/images";
 import { IconBox, processIcons } from "@/lib/icons";
 
 export function ProcessSection() {
@@ -16,15 +14,7 @@ export function ProcessSection() {
             title="How We Deliver Excellence"
             description="A structured approach ensuring consistent quality, transparent communication, and alignment with MASCO Energy corporate standards at every project stage."
           />
-          <div className="mt-10 hidden lg:block">
-            <SectionImage
-              src={images.process}
-              alt="Infrastructure and project delivery"
-              aspect="video"
-              overlay="gradient"
-              className="shadow-lg"
-            />
-          </div>
+
         </div>
 
         <div className="relative lg:col-span-7">

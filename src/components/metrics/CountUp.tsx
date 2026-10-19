@@ -8,11 +8,12 @@ type CountUpProps = {
   metric: KpiMetric;
   className?: string;
   duration?: number;
+  minimumDigits?: number;
 };
 
-export function CountUp({ metric, className = "", duration = 1600 }: CountUpProps) {
+export function CountUp({ metric, className = "", duration = 1600, minimumDigits }: CountUpProps) {
   const reduced = useReducedMotion();
-  const [display, setDisplay] = useState(reduced ? metric.value : 0);
+  const [display, setDisplay] = useState(metric.value);
   const ref = useRef<HTMLSpanElement>(null);
   const hasAnimated = useRef(false);
 
@@ -28,13 +29,12 @@ export function CountUp({ metric, className = "", duration = 1600 }: CountUpProp
         hasAnimated.current = true;
 
         const start = performance.now();
-        const from = 0;
         const to = metric.value;
 
         const tick = (now: number) => {
           const progress = Math.min((now - start) / duration, 1);
           const eased = 1 - Math.pow(1 - progress, 3);
-          setDisplay(from + (to - from) * eased);
+          setDisplay(to * eased);
           if (progress < 1) requestAnimationFrame(tick);
         };
 
@@ -47,9 +47,14 @@ export function CountUp({ metric, className = "", duration = 1600 }: CountUpProp
     return () => observer.disconnect();
   }, [metric.value, duration, reduced]);
 
+  const currentValue = reduced ? metric.value : display;
+  const valueText = minimumDigits && metric.decimals === undefined
+    ? `${metric.prefix ?? ""}${Math.round(currentValue).toString().padStart(minimumDigits, "0")}${metric.suffix ?? ""}`
+    : formatMetricValue(metric, currentValue);
+
   return (
-    <span ref={ref} className={className}>
-      {formatMetricValue(metric, reduced ? metric.value : display)}
+    <span ref={ref} className={className} aria-label={formatMetricValue(metric)}>
+      {valueText}
     </span>
   );
 }

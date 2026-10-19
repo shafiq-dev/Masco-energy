@@ -1,3 +1,5 @@
+import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -5,15 +7,19 @@ import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { FAQSection } from "@/components/home/FAQSection";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
+import { CountUp } from "@/components/metrics/CountUp";
 import {
   aboutParagraphs,
   company,
   pillars,
   processSteps,
-  projects,
   services,
   visionMission,
 } from "@/lib/home-content";
+import { getKpisByIds } from "@/lib/metrics";
+import { IconBox, pillarIcons } from "@/lib/icons";
+
+const dossierMetrics = getKpisByIds(["portfolio", "workforce", "markets"]);
 
 function SectionNumber({ value, label }: { value: string; label: string }) {
   return (
@@ -26,23 +32,21 @@ function SectionNumber({ value, label }: { value: string; label: string }) {
 
 export default function DossierHomePage() {
   return (
-    <div className="min-h-screen bg-[#f2f4f6] text-masco-black">
-      <SiteHeader />
+    <div className="theme-dossier min-h-screen bg-[#f2f4f6] text-masco-black">
+      <SiteHeader theme="dossier" />
 
       <main>
         <section id="home" className="px-6 py-10 lg:px-16 lg:py-16">
           <div className="mx-auto grid max-w-7xl overflow-hidden border border-masco-navy/15 bg-white lg:grid-cols-[280px_1fr]">
             <aside className="flex flex-col justify-between bg-masco-navy p-7 text-white lg:min-h-[690px] lg:p-10">
               <div>
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-masco-blue">Corporate dossier</p>
+                <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-masco-blue"><span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />Corporate dossier</p>
                 <p className="mt-3 text-sm text-white/55">Energy &amp; industrial infrastructure</p>
               </div>
               <div className="mt-14 grid grid-cols-2 gap-6 lg:mt-0 lg:grid-cols-1">
-                <div><p className="text-4xl font-bold">60+</p><p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/50">Years&apos; experience</p></div>
-                <div><p className="text-4xl font-bold">3,000+</p><p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/50">Professionals</p></div>
-                <div><p className="text-4xl font-bold">07</p><p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/50">Core sectors</p></div>
+                {dossierMetrics.map((metric, index) => <div key={metric.id}><p className="text-4xl font-bold"><CountUp metric={metric} minimumDigits={metric.id === "markets" ? 2 : undefined} /></p><p className="mt-1 text-xs uppercase tracking-[0.14em] text-white/70">{["Project value", "Workforce", "Core markets"][index]}</p></div>)}
               </div>
-              <p className="mt-14 text-xs leading-6 text-white/45 lg:mt-0">Headquartered in {company.city}<br />{company.country}</p>
+              <p className="mt-14 text-xs leading-6 text-white/45 lg:mt-0">Headquartered in {company.headquarters}, {company.city}<br />{company.country}</p>
             </aside>
 
             <div className="grid min-h-[690px] lg:grid-rows-[1fr_190px]">
@@ -58,7 +62,7 @@ export default function DossierHomePage() {
                 </div>
               </AnimateIn>
               <div className="relative overflow-hidden border-t border-masco-navy/10">
-                <Image src="/images/hero-split.jpg" alt="MASCO Energy project infrastructure" fill priority className="object-cover" sizes="(max-width: 1024px) 100vw, 75vw" />
+                <Image src="/images/generated/saudi-energy-hero.png" alt="MASCO Energy project infrastructure" fill priority className="object-cover" sizes="(max-width: 1024px) 100vw, 75vw" />
                 <div className="absolute inset-0 bg-gradient-to-r from-masco-navy/70 to-transparent" />
               </div>
             </div>
@@ -87,7 +91,7 @@ export default function DossierHomePage() {
             <div>
               <div className="flex flex-col justify-between gap-6 border-b border-masco-navy/15 pb-10 md:flex-row md:items-end">
                 <h2 className="max-w-3xl text-4xl font-bold leading-tight text-masco-navy lg:text-5xl">Six capabilities managed through one delivery framework.</h2>
-                <p className="max-w-sm text-sm leading-7 text-masco-black/55">EPC, EPCM, and hybrid models are configured around project scope, risk, governance, and schedule.</p>
+                <p className="max-w-sm text-sm leading-7 text-masco-black/55">Engineering, procurement, construction, commissioning, handover and lifecycle support are coordinated through one integrated delivery platform.</p>
               </div>
               <div>
                 {services.map((service, index) => (
@@ -105,23 +109,7 @@ export default function DossierHomePage() {
           </div>
         </section>
 
-        <section id="projects" className="bg-masco-navy px-6 py-24 text-white lg:px-16 lg:py-32">
-          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[220px_1fr] lg:gap-20">
-            <div className="border-t-2 border-masco-blue pt-4"><span className="block text-5xl font-bold">03</span><span className="mt-2 block text-xs font-bold uppercase tracking-[0.18em] text-white/45">Sector coverage</span></div>
-            <div>
-              <h2 className="max-w-4xl text-4xl font-bold leading-tight lg:text-6xl">A balanced portfolio across essential and emerging infrastructure.</h2>
-              <div className="mt-12 grid gap-px bg-white/15 md:grid-cols-2">
-                {projects.map((project, index) => (
-                  <article key={project.id} className="bg-masco-navy px-6 py-7 md:px-8">
-                    <div className="flex items-start justify-between gap-6"><span className="text-xs font-bold text-masco-blue">0{index + 1}</span><span className="text-[10px] uppercase tracking-[0.16em] text-white/35">{project.category}</span></div>
-                    <h3 className="mt-10 text-2xl font-bold">{project.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-white/55">{project.description}</p>
-                  </article>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <ProjectDirectorySection theme="dossier" />
 
         <section className="bg-white px-6 py-24 lg:px-16 lg:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[220px_1fr] lg:gap-20">
@@ -142,9 +130,10 @@ export default function DossierHomePage() {
                 <p className="text-xs font-bold uppercase tracking-[0.18em] text-masco-blue">Operating principles</p>
                 <div className="mt-7 border border-masco-navy/15">
                   {pillars.map((pillar, index) => (
-                    <article key={pillar.title} className={`p-6 ${index !== pillars.length - 1 ? "border-b border-masco-navy/15" : ""}`}>
-                      <h3 className="font-bold text-masco-navy">{pillar.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-masco-black/60">{pillar.text}</p>
+                    <article key={pillar.title} className={`flex gap-4 p-6 ${index !== pillars.length - 1 ? "border-b border-masco-navy/15" : ""}`}>
+                      {pillarIcons[pillar.title] && <IconBox icon={pillarIcons[pillar.title]} variant="light" size="sm" />}
+                      <div><h3 className="font-bold text-masco-navy">{pillar.title}</h3>
+                      <p className="mt-2 text-sm leading-7 text-masco-black/60">{pillar.text}</p></div>
                     </article>
                   ))}
                 </div>
@@ -153,10 +142,11 @@ export default function DossierHomePage() {
           </div>
         </section>
 
-        <FAQSection variant="minimal" />
+        <ProfileStorySections theme="dossier" />
+      <FAQSection variant="minimal" />
       </main>
 
-      <SiteFooter />
+      <SiteFooter theme="dossier" />
     </div>
   );
 }

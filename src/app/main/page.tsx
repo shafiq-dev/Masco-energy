@@ -9,14 +9,14 @@ import { homeVariants } from "@/lib/brand";
 export default function MainPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader />
+      <SiteHeader gallery />
 
       <section className="masco-surface border-b border-masco-navy/10 px-6 py-12 lg:px-16 lg:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionHeader
             eyebrow="Design Exploration"
             title="MASCO Energy Home Page Directions"
-            description="Nine distinct corporate art directions using one unified MASCO Energy profile: the same company story, capabilities, sectors, values, delivery models, and contact journey expressed through different visual systems."
+            description="Nine corporate art directions grounded in the 2026 company profile: the same Saudi EPC story, six core markets, integrated capabilities, named projects, specialized businesses, leadership, sustainability commitments and contact journey."
           />
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function MainPage() {
         </div>
       </main>
 
-      <SiteFooter />
+      <SiteFooter gallery />
     </div>
   );
 }

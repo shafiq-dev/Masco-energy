@@ -3,8 +3,8 @@ import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 
 const milestones = [
-  { title: "Contracting Legacy", text: "More than six decades of experience delivering complex infrastructure in Saudi Arabia." },
-  { title: "Energy Focus", text: "A specialised platform serving power, oil and gas, petrochemical, utility, mining, industrial, and digital markets." },
+  { title: "Contracting Legacy", text: "Decades of experience delivering complex infrastructure in Saudi Arabia." },
+  { title: "Energy Focus", text: "A specialised platform serving oil and gas, petrochemicals, power and energy, mining and industrial, utilities, and strategic infrastructure." },
   { title: "Integrated Delivery", text: "Engineering, procurement, construction, commissioning, operations, and maintenance under one accountable team." },
   { title: "Future Direction", text: "Resilient, sustainable infrastructure aligned with national development and long-term client value." },
 ] as const;

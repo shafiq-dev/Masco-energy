@@ -1,3 +1,4 @@
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -13,27 +14,31 @@ import { aboutParagraphs } from "@/lib/home-content";
 
 export default function SplitHomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader />
+    <div className="flex min-h-screen flex-col bg-white theme-split">
+      <SiteHeader theme="split" />
 
+      <main className="flex-1">
       <HeroBanner
         variant="split"
-        subtitle="Building for Better Life"
+        subtitle="Engineering Progress. Delivering with Purpose."
         title="Trusted Saudi EPC Partner Across the Kingdom"
         description={aboutParagraphs[2]}
         primaryCta={{ label: "About Us", href: "#about" }}
-        secondaryCta={{ label: "Our Sectors", href: "#projects" }}
+        secondaryCta={{ label: "Our Projects", href: "#projects" }}
       />
 
       <SplitMetricsPanel />
       <AboutSection layout="split" />
       <ServicesSection layout="grid" showMetrics />
-      <ProjectDirectorySection />
+      <ProjectDirectorySection theme="split" />
       <PillarsSection />
       <ProcessSection />
       <TestimonialsSection layout="cards" />
+      <ProfileStorySections theme="split" />
       <FAQSection variant="classic" />
-      <SiteFooter />
+      </main>
+
+      <SiteFooter theme="split" />
     </div>
   );
 }

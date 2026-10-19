@@ -9,7 +9,7 @@ const bukra = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "MASCO Energy | Building for Better Life",
+  title: "MASCO Energy | Engineering Progress. Delivering with Purpose.",
   description:
     "Saudi-based EPC and integrated contracting across energy, oil & gas, petrochemical, and industrial infrastructure. Al Khobar, KSA.",
 };

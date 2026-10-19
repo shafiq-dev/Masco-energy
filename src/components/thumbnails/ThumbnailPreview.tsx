@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { brand } from "@/lib/brand";
 
 type ThumbnailPreviewProps = {
@@ -41,11 +42,11 @@ function ClassicPreview() {
       </div>
       <div
         className="mx-2 flex flex-1 flex-col items-center justify-center rounded-[8px] px-4 py-6 text-center text-white"
-        style={{ background: brand.gradient }}
+        style={{ background: `linear-gradient(90deg, #134880dd, #13488055), url(/images/generated/saudi-energy-hero.png) center/cover` }}
       >
-        <span className="text-[7px] font-bold">Integrated Energy Solutions</span>
+        <span className="text-[7px] font-bold">Saudi EPC &amp; Industrial Infrastructure</span>
         <span className="mt-2 max-w-[80%] text-[5px] text-white/80">
-          Delivering excellence across the energy and industrial sectors.
+          Engineering progress. Delivering with purpose.
         </span>
         <div className="mt-3 flex gap-2">
           <span className="rounded-[6px] bg-white px-2 py-1 text-[5px] font-bold text-masco-navy">
@@ -77,18 +78,18 @@ function MinimalPreview() {
       <span className="font-bold text-masco-navy">MASCO Energy</span>
       <div className="mt-4 border-t border-masco-navy/10 pt-4">
         <span className="text-[8px] font-bold leading-tight text-masco-black">
-          Vital role in delivering integrated solutions
+          Built on Experience. Focused on Energy.
         </span>
         <p className="mt-2 text-[5px] leading-relaxed text-masco-black/50">
-          Corporate identity reflects values, culture, and future aspirations
-          across all communication channels.
+          Decades of Saudi contracting experience focused into one energy platform.
         </p>
       </div>
+      <div className="relative mt-3 min-h-12 flex-1 overflow-hidden"><Image src="/images/generated/pipeline-corridor.png" alt="" fill className="object-cover" sizes="350px" /></div>
       <div className="mt-auto space-y-2">
         <div className="h-px bg-masco-navy/10" />
         <div className="flex justify-between text-[5px] text-masco-navy">
-          <span>Guidelines</span>
-          <span>Partners</span>
+          <span>Projects</span>
+          <span>Capabilities</span>
           <span>Contact</span>
         </div>
       </div>
@@ -104,17 +105,15 @@ function ServicesPreview() {
         <span className="text-masco-blue">Solutions</span>
       </div>
       <span className="mt-3 text-[7px] font-bold text-masco-black">
-        Our Sectors
+        Integrated EPC Delivery
       </span>
       <div className="mt-2 grid flex-1 grid-cols-2 gap-2">
-        {["Energy", "Industrial", "Power", "Infrastructure"].map((label) => (
+        {["Engineering", "Procurement", "Construction", "O&M"].map((label) => (
           <div
             key={label}
             className="rounded-[6px] border border-masco-navy/10 p-2"
           >
-            <div className="flex h-4 w-4 items-center justify-center rounded-[4px] bg-masco-navy/10 text-[5px] text-masco-navy">
-              ●
-            </div>
+            <div className="relative h-9 overflow-hidden rounded-[4px]"><Image src={`/images/generated/${label === "Engineering" ? "engineering-design-empty" : label === "Procurement" ? "procurement-logistics-empty" : label === "Construction" ? "epc-construction-empty" : "commissioning-systems"}.png`} alt="" fill className="object-cover" sizes="150px" /></div>
             <span className="mt-1 block font-bold text-masco-navy">{label}</span>
             <div className="mt-1 h-1 w-full rounded bg-masco-black/10" />
           </div>
@@ -132,17 +131,17 @@ function SplitPreview() {
           About MASCO
         </span>
         <span className="mt-2 text-[7px] font-bold leading-tight text-masco-navy">
-          Strengthening brand presence
+          Backed by a Broader Legacy
         </span>
         <p className="mt-2 text-[5px] leading-relaxed text-masco-black/50">
-          Unified reference for visual and strategic foundations.
+          Saudi market experience, resource depth and execution capacity.
         </p>
       </div>
-      <div className="flex w-[45%] flex-col gap-2 bg-masco-navy/5 p-3">
+      <div className="flex w-[45%] flex-col gap-2 bg-masco-navy/5 p-3" style={{ background: "linear-gradient(#13488044,#13488066), url(/images/generated/coastal-energy.png) center/cover" }}>
         {[
-          { n: "60+", l: "Years" },
-          { n: "3,000+", l: "Professionals" },
-          { n: "7", l: "Sectors" },
+          { n: "+4.5B", l: "Portfolio" },
+          { n: "3,000+", l: "Workforce" },
+          { n: "6", l: "Markets" },
         ].map((stat) => (
           <div
             key={stat.l}
@@ -169,12 +168,12 @@ function EditorialPreview() {
         className="px-3 py-3 text-white"
         style={{ background: brand.gradient }}
       >
-        <span className="text-[7px] font-bold">Corporate Identity</span>
+        <span className="text-[7px] font-bold">Company Profile 2026</span>
       </div>
-      <div className="flex-1 px-3 py-2">
+      <div className="flex-1 px-3 py-2" style={{ background: "linear-gradient(90deg,#ffffffee,#ffffff77),url(/images/generated/engineering-design-empty.png) center/cover" }}>
         <div className="h-1 w-6 rounded bg-masco-blue" />
         <span className="mt-2 block text-[6px] font-bold text-masco-black">
-          Values & Culture
+          Vision, Mission &amp; Values
         </span>
         <div className="mt-1 h-1 w-full rounded bg-masco-black/10" />
       </div>
@@ -206,7 +205,7 @@ function MonumentalPreview() {
         </span>
         <div className="mt-3 h-[2px] w-10 bg-masco-blue" />
       </div>
-      <div className="absolute -bottom-6 -right-5 h-24 w-24 rounded-full border-[12px] border-masco-blue/15" />
+      <div className="relative mt-3 h-16 overflow-hidden"><Image src="/images/generated/epc-construction-empty.png" alt="" fill className="object-cover" sizes="350px" /></div>
     </div>
   );
 }
@@ -222,6 +221,7 @@ function KineticPreview() {
         <span className="block text-[12px] font-bold leading-none">One connected</span>
         <span className="block text-[12px] font-bold leading-none text-masco-blue">delivery system.</span>
       </div>
+      <div className="relative mb-3 h-10 overflow-hidden rounded-md"><Image src="/images/generated/commissioning-systems.png" alt="" fill className="object-cover" sizes="350px" /></div>
       <div className="grid grid-cols-4 gap-1">
         {["01", "02", "03", "04"].map((step) => (
           <div key={step} className="border-t border-white/25 pt-1 text-white/55">{step}</div>
@@ -236,12 +236,13 @@ function DossierPreview() {
     <div className="grid h-full grid-cols-[30%_70%] text-[6px]">
       <div className="bg-masco-navy p-3 text-white">
         <span className="font-bold">MASCO</span>
-        <span className="mt-10 block text-[18px] font-bold leading-none text-masco-blue">07</span>
-        <span className="mt-1 block text-white/55">Core sectors</span>
+        <span className="mt-10 block text-[18px] font-bold leading-none text-masco-blue">06</span>
+        <span className="mt-1 block text-white/55">Core markets</span>
       </div>
       <div className="p-3">
         <span className="uppercase tracking-widest text-masco-blue">Corporate profile</span>
         <span className="mt-3 block text-[10px] font-bold leading-tight text-masco-navy">A disciplined partner for complex infrastructure.</span>
+        <div className="relative mt-3 h-9 overflow-hidden"><Image src="/images/generated/industrial-utilities.png" alt="" fill className="object-cover" sizes="250px" /></div>
         <div className="mt-4 space-y-2">
           {["Capabilities", "Sectors", "Values"].map((label, index) => (
             <div key={label} className="flex items-center gap-2 border-t border-masco-navy/15 pt-1">
@@ -263,7 +264,7 @@ function LuminousPreview() {
         <span className="mt-1 block text-[12px] font-bold leading-none text-masco-blue">comes next.</span>
       </div>
       <span className="mt-3 max-w-[75%] leading-relaxed text-masco-black/50">Integrated delivery for essential energy and industrial infrastructure.</span>
-      <div className="absolute -bottom-10 h-24 w-[80%] rounded-t-[24px] bg-gradient-to-br from-masco-navy to-masco-blue shadow-2xl" />
+      <div className="relative mt-3 min-h-12 w-full flex-1 overflow-hidden rounded-t-[12px]"><Image src="/images/generated/saudi-energy-hero.png" alt="" fill className="object-cover" sizes="350px" /></div>
     </div>
   );
 }

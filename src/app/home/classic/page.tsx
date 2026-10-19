@@ -1,3 +1,4 @@
+import { ProfileStorySections } from "@/components/home/ProfileStorySections";
 import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AboutSection } from "@/components/home/AboutSection";
@@ -14,28 +15,32 @@ import { aboutParagraphs } from "@/lib/home-content";
 
 export default function ClassicHomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
-      <SiteHeader />
+    <div className="flex min-h-screen flex-col bg-white theme-classic">
+      <SiteHeader theme="classic" />
 
+      <main className="flex-1">
       <HeroBanner
         variant="classic"
-        subtitle="Building for Better Life"
+        subtitle="Engineering Progress. Delivering with Purpose."
         title="Trusted Saudi EPC Partner for Energy & Industry"
         description={aboutParagraphs[0]}
         primaryCta={{ label: "Our Services", href: "#services" }}
-        secondaryCta={{ label: "Our Sectors", href: "#projects" }}
+        secondaryCta={{ label: "Our Projects", href: "#projects" }}
       />
 
       <StatsSection variant="bar" theme="classic" />
       <AboutSection layout="centered" />
       <MetricsDashboardSection />
       <ServicesSection layout="cards" showMetrics />
-      <ProjectDirectorySection />
+      <ProjectDirectorySection theme="classic" />
       <PillarsSection />
       <ProcessSection />
       <TestimonialsSection layout="cards" />
+      <ProfileStorySections theme="classic" />
       <FAQSection variant="classic" />
-      <SiteFooter />
+      </main>
+
+      <SiteFooter theme="classic" />
     </div>
   );
 }
