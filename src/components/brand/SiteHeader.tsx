@@ -6,7 +6,7 @@ import { navItems } from "@/lib/home-content";
 
 const headerNavItems = navItems.filter((item) => item.label !== "Contact");
 
-const darkThemes = new Set(["kinetic"]);
+const darkThemes = new Set<string>();
 
 export function SiteHeader({
   gallery = false,
