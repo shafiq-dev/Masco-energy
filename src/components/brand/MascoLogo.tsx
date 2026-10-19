@@ -8,10 +8,10 @@ type MascoLogoProps = {
 };
 
 const sizes = {
-  xs: { width: 92, height: 74, className: "h-[74px] w-[92px]" },
-  sm: { width: 120, height: 96, className: "h-24 w-[120px]" },
-  md: { width: 66, height: 68, className: "h-[68px] w-[66px]" },
-  lg: { width: 92, height: 96, className: "h-24 w-[92px]" },
+  xs: { width: 148, height: 40, className: "h-10 w-[148px]" },
+  sm: { width: 208, height: 56, className: "h-14 w-[208px]" },
+  md: { width: 178, height: 48, className: "h-12 w-[178px]" },
+  lg: { width: 238, height: 64, className: "h-16 w-[238px]" },
 };
 
 export function MascoLogo({
