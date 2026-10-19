@@ -818,7 +818,8 @@ body:has(dialog[open]) { overflow: hidden; }
 .luminous-scene[data-active="true"] { opacity: 1; }
 .hero-metric { transition: border-color 1.25s ease, background-color 1.25s ease, box-shadow 1.25s ease; }
 .hero-metric[data-active="true"] { border-color: color-mix(in srgb,var(--scene-accent) 38%,transparent); background: #071c3188; box-shadow: 0 0 28px color-mix(in srgb,var(--scene-accent) 16%,transparent); }
-.hero-metric-stroke { position: absolute; inset: 0; padding: 2px; border-radius: inherit; pointer-events: none; opacity: 0; background: conic-gradient(from -90deg,var(--scene-accent) calc(var(--tab-progress,0) * 1turn),transparent 0); mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); mask-composite: exclude; -webkit-mask: linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0); -webkit-mask-composite: xor; }
+.hero-metric-stroke { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; opacity: 0; overflow: visible; fill: none; }
+.hero-metric-stroke rect { width: calc(100% - 2px); height: calc(100% - 2px); fill: none; stroke: var(--scene-accent); stroke-width: 2px; stroke-linecap: round; stroke-dasharray: calc(var(--tab-progress,0) * 100) 100; }
 .hero-metric[data-active="true"] .hero-metric-stroke { opacity: 1; }
 /* A branded enquiry panel uses the browser's native modal focus management. */
 .contact-dialog-modern { width: calc(100% - 40px); max-width: 980px; max-height: calc(100dvh - 48px); padding: 0; border: 1px solid #ffffff55; border-radius: 28px; margin: auto; color: #134880; background: #fff; box-shadow: 0 36px 120px #071c3166; overflow: hidden; }

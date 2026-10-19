@@ -31,7 +31,7 @@ export function LuminousHeroVisual() {
       {metrics.map((metric, index) => <button key={metric.id} type="button" onClick={() => select(index)} aria-pressed={active === index} aria-label={`${metric.label} — view ${scenes[index].label.toLowerCase()}`} className="hero-metric relative overflow-hidden rounded-[20px] border border-white/20 bg-[#071c31]/40 p-5 text-left backdrop-blur-xl" data-active={active === index}>
         <span className="block text-3xl font-bold"><CountUp metric={metric} duration={1900} minimumDigits={metric.id === "markets" ? 2 : undefined} /></span>
         <span className="mt-1 block text-xs leading-5 text-white/85">{metric.label}</span>
-        <span className="hero-metric-stroke" aria-hidden="true" />
+        <svg className="hero-metric-stroke" aria-hidden="true" width="100%" height="100%"><rect x="1" y="1" rx="19" pathLength="100" /></svg>
       </button>)}
     </div>
   </section>;
