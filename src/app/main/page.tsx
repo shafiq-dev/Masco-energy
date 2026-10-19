@@ -22,6 +22,10 @@ export default function MainPage() {
       </section>
 
       <main className="flex-1 px-6 py-12 lg:px-16">
+        <div className="mx-auto mb-10 max-w-7xl overflow-hidden rounded-[28px] bg-[#071c31] p-7 text-white sm:p-10 lg:p-14">
+          <p className="text-xs font-bold uppercase tracking-[.22em] text-sky-300">Recommended direction · Theme 09</p>
+          <div className="mt-5 flex flex-col justify-between gap-8 lg:flex-row lg:items-end"><div><h1 className="text-3xl font-bold tracking-tight sm:text-5xl">Luminous Precision</h1><p className="mt-5 max-w-2xl text-sm leading-7 text-slate-300">A confident, contemporary expression of MASCO Energy. Immersive infrastructure imagery, fluid project discovery and a clear story from expertise to delivery.</p></div><Link href="/home/luminous" className="inline-flex w-fit shrink-0 items-center gap-4 rounded-full bg-white px-6 py-4 text-sm font-bold text-masco-navy">Explore the lead direction<ArrowRight className="h-4 w-4" /></Link></div>
+        </div>
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 xl:grid-cols-3">
           {homeVariants.map((variant, index) => (
             <Link

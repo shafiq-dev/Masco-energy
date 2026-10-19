@@ -1,5 +1,6 @@
 import { MetricCard } from "@/components/metrics/MetricCard";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
+import { SectionKicker } from "@/components/home/SectionKicker";
 import { statsByTheme } from "@/lib/home-content";
 import type { StatItem } from "@/lib/home-content";
 
@@ -54,12 +55,7 @@ export function StatsSection({
     <section className="masco-surface-tint px-6 py-20 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <AnimateIn>
-          <div className="flex items-center gap-3">
-            <span className="h-2 w-2 rounded-full bg-masco-blue" />
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-masco-blue">
-              By the Numbers
-            </p>
-          </div>
+          <SectionKicker>By the Numbers</SectionKicker>
         </AnimateIn>
         <div className="mt-10 grid grid-cols-2 gap-5 md:grid-cols-4">
           {statItems.map((stat, index) => (

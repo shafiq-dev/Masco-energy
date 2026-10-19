@@ -23,7 +23,7 @@ export function SectorBreakdownSection() {
         {sectorNames.map((sector, index) => (
           <AnimateIn key={sector} delay={index * 0.06}>
             <article className="masco-card h-full overflow-hidden">
-              <div className="relative aspect-[16/9]"><Image src={`/images/generated/${marketImages[index]}.png`} alt={`Illustrative ${sector.toLowerCase()} infrastructure`} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" /></div><div className="p-6">
+              <div className="relative aspect-[16/9]"><Image src={`/images/generated/${marketImages[index]}.webp`} alt={`${sector.toLowerCase()} infrastructure`} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" /></div><div className="p-6">
               <span className="text-xs font-bold text-masco-blue">{String(index + 1).padStart(2, "0")}</span>
               <h3 className="mt-3 text-lg font-bold text-masco-navy">{sector}</h3>
               <p className="mt-3 text-sm leading-relaxed text-masco-black/60">{descriptions[index]}</p>

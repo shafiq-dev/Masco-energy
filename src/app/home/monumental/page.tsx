@@ -1,11 +1,13 @@
+import { HeroScene } from "@/components/home/HeroScene";
+import { HeroSignal } from "@/components/home/HeroLoop";
 import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
 import { ProfileStorySections } from "@/components/home/ProfileStorySections";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { SiteFooter } from "@/components/brand/SiteFooter";
 import { SiteHeader } from "@/components/brand/SiteHeader";
 import { FAQSection } from "@/components/home/FAQSection";
+import { SectionKicker } from "@/components/home/SectionKicker";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
 import { CountUp } from "@/components/metrics/CountUp";
 import {
@@ -16,7 +18,7 @@ import {
   visionMission,
 } from "@/lib/home-content";
 import { getKpisByIds } from "@/lib/metrics";
-import { IconBox, pillarIcons } from "@/lib/icons";
+import { IconBox, pillarIcons, serviceIcons } from "@/lib/icons";
 
 const portfolioMetric = getKpisByIds(["portfolio"])[0];
 
@@ -29,13 +31,11 @@ export default function MonumentalHomePage() {
         <section id="home" className="px-6 pb-16 pt-10 lg:px-16 lg:pb-24 lg:pt-16">
           <div className="mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-12 lg:gap-16">
             <AnimateIn className="lg:col-span-7">
-              <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.28em] text-masco-blue">
-                <span className="hero-live-dot h-2 w-2 rounded-full bg-masco-blue" />
-                Saudi EPC &amp; integrated contracting
-              </p>
+              <SectionKicker>Saudi EPC &amp; integrated contracting</SectionKicker>
               <h1 className="mt-8 max-w-4xl text-[clamp(3.25rem,8vw,7.6rem)] font-bold leading-[0.88] tracking-[-0.055em] text-masco-navy">
                 Energy built at national scale.
               </h1>
+              <HeroSignal variant="monumental" />
               <p className="mt-9 max-w-2xl text-lg leading-8 text-masco-black/65 lg:text-xl">
                 MASCO Energy brings engineering, procurement, construction,
                 commissioning, and lifecycle support into one accountable
@@ -44,7 +44,7 @@ export default function MonumentalHomePage() {
               <div className="mt-10 flex flex-wrap items-center gap-5">
                 <Link
                   href="#services"
-                  className="inline-flex items-center gap-3 rounded-full bg-masco-navy px-7 py-4 text-sm font-bold text-white transition-transform duration-150 ease-out active:scale-[0.97]"
+                  className="inline-flex items-center gap-3 rounded-none bg-masco-navy px-7 py-4 text-sm font-bold text-white transition-transform duration-150 ease-out active:scale-[0.97]"
                 >
                   Explore our capabilities
                   <ArrowRight className="h-4 w-4" />
@@ -57,14 +57,7 @@ export default function MonumentalHomePage() {
 
             <AnimateIn direction="left" className="lg:col-span-5">
               <div className="relative min-h-[440px] overflow-hidden rounded-[28px] lg:min-h-[620px]">
-                <Image
-                  src="/images/generated/epc-construction-empty.png"
-                  alt="Energy infrastructure delivered by MASCO Energy"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
+                <HeroScene src="/images/generated/jeddah-infrastructure.webp" alt="MASCO Energy infrastructure" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071c31]/85 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
                   <p className="text-4xl font-bold"><CountUp metric={portfolioMetric} /></p>
@@ -95,7 +88,7 @@ export default function MonumentalHomePage() {
           <div className="mx-auto max-w-7xl">
             <AnimateIn className="grid gap-10 lg:grid-cols-12 lg:gap-16">
               <div className="lg:col-span-4">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-masco-blue">01 / Company</p>
+                <SectionKicker index="01">Company</SectionKicker>
                 <h2 className="mt-5 text-3xl font-bold leading-tight text-masco-navy lg:text-5xl">A Saudi partner built for complex delivery.</h2>
               </div>
               <div className="space-y-6 text-base leading-8 text-masco-black/65 lg:col-span-7 lg:col-start-6 lg:text-lg">
@@ -120,7 +113,7 @@ export default function MonumentalHomePage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 lg:grid-cols-12">
               <div className="lg:col-span-4">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-masco-blue">02 / Capabilities</p>
+                <SectionKicker index="02" tone="inverse">Capabilities</SectionKicker>
                 <h2 className="mt-5 text-4xl font-bold leading-tight lg:text-6xl">One platform. Every critical stage.</h2>
                 <p className="mt-6 max-w-sm leading-7 text-white/65">{aboutParagraphs[2]}</p>
               </div>
@@ -130,7 +123,7 @@ export default function MonumentalHomePage() {
                     <article className="grid gap-4 border-t border-white/15 py-7 sm:grid-cols-[52px_1fr]">
                       <span className="text-sm font-bold text-masco-blue">0{index + 1}</span>
                       <div>
-                        <h3 className="text-xl font-bold md:text-2xl">{service.name}</h3>
+                        {serviceIcons[service.name] && <IconBox icon={serviceIcons[service.name]} variant="blue" size="sm" className="mb-3" />}<h3 className="text-xl font-bold md:text-2xl">{service.name}</h3>
                         <p className="mt-3 max-w-2xl text-sm leading-7 text-white/60">{service.description}</p>
                       </div>
                     </article>
@@ -146,7 +139,7 @@ export default function MonumentalHomePage() {
         <section className="px-6 py-24 lg:px-16 lg:py-32">
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-12">
             <div className="lg:col-span-5">
-              <p className="text-xs font-bold uppercase tracking-[0.24em] text-masco-blue">04 / Delivery discipline</p>
+              <SectionKicker index="03">Delivery discipline</SectionKicker>
               <h2 className="mt-5 text-4xl font-bold leading-tight text-masco-navy lg:text-5xl">Control from definition to handover.</h2>
               <p className="mt-6 max-w-lg leading-7 text-masco-black/60">{aboutParagraphs[3]}</p>
             </div>
@@ -162,7 +155,7 @@ export default function MonumentalHomePage() {
               ))}
             </div>
           </div>
-          <div className="mx-auto mt-20 grid max-w-7xl gap-px overflow-hidden rounded-[24px] bg-masco-navy/10 md:grid-cols-2 lg:grid-cols-4">
+          <div className="mx-auto mt-20 grid max-w-7xl gap-px overflow-hidden rounded-none bg-masco-navy/10 md:grid-cols-2 lg:grid-cols-4">
             {pillars.map((pillar) => (
               <article key={pillar.title} className="bg-white p-7">
                 {pillarIcons[pillar.title] && <IconBox icon={pillarIcons[pillar.title]} variant="light" size="sm" className="mb-5 rounded-xl" />}

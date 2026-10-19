@@ -4,7 +4,6 @@ import { SiteHeader } from "@/components/brand/SiteHeader";
 import { AboutSection } from "@/components/home/AboutSection";
 import { FAQSection } from "@/components/home/FAQSection";
 import { HeroBanner } from "@/components/home/HeroBanner";
-import { MetricsDashboardSection } from "@/components/home/MetricsDashboardSection";
 import { PillarsSection } from "@/components/home/PillarsSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
@@ -19,25 +18,24 @@ export default function ClassicHomePage() {
       <SiteHeader theme="classic" />
 
       <main className="flex-1">
-      <HeroBanner
-        variant="classic"
-        subtitle="Engineering Progress. Delivering with Purpose."
-        title="Trusted Saudi EPC Partner for Energy & Industry"
-        description={aboutParagraphs[0]}
-        primaryCta={{ label: "Our Services", href: "#services" }}
-        secondaryCta={{ label: "Our Projects", href: "#projects" }}
-      />
+        <HeroBanner
+          variant="classic"
+          subtitle="Corporate delivery. National accountability."
+          title="Trusted Saudi EPC Partner for Energy & Industry"
+          description={aboutParagraphs[0]}
+          primaryCta={{ label: "Our Services", href: "#services" }}
+          secondaryCta={{ label: "Our Projects", href: "#projects" }}
+        />
 
-      <StatsSection variant="bar" theme="classic" />
-      <AboutSection layout="centered" />
-      <MetricsDashboardSection />
-      <ServicesSection layout="cards" showMetrics />
-      <ProjectDirectorySection theme="classic" />
-      <PillarsSection />
-      <ProcessSection />
-      <TestimonialsSection layout="cards" />
-      <ProfileStorySections theme="classic" />
-      <FAQSection variant="classic" />
+        <StatsSection variant="bar" theme="classic" />
+        <AboutSection layout="centered" />
+        <ServicesSection layout="cards" showMetrics />
+        <ProjectDirectorySection theme="classic" />
+        <PillarsSection />
+        <ProcessSection />
+        <TestimonialsSection layout="cards" />
+        <ProfileStorySections theme="classic" />
+        <FAQSection variant="classic" />
       </main>
 
       <SiteFooter theme="classic" />

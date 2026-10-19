@@ -65,12 +65,12 @@ export const services = [
 ] as const;
 
 export const projects = [
-  { id: "amiral", title: "AMIRAL — Package 6", category: "Petrochemicals / Industrial", location: "Jubail, Saudi Arabia", year: "Ongoing", partner: "EPC package delivery", description: "Multidisciplinary project execution supporting the AMIRAL development and demonstrating energy-sector delivery and quality-management performance.", image: "/images/generated/saudi-energy-hero.png", featured: true, showPhoto: true },
-  { id: "mssd-spark", title: "MSSD — SPARK", category: "Industrial / Energy Infrastructure", location: "King Salman Energy Park, Eastern Province", year: "Project delivery", partner: "Construction & Infrastructure", description: "Multidisciplinary construction and project execution within one of Saudi Arabia's key energy ecosystems, with 99.09% waste diversion reported.", image: "/images/generated/industrial-utilities.png", featured: true, showPhoto: true },
-  { id: "mssd-jeddah", title: "MSSD — Jeddah", category: "Industrial Infrastructure", location: "Jeddah, Saudi Arabia", year: "Project delivery", partner: "Construction & Infrastructure", description: "Construction and infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/jeddah-infrastructure.png", featured: false, showPhoto: true },
-  { id: "ras-tanura", title: "Ras Tanura Project", category: "Oil & Gas / Energy", location: "Ras Tanura, Eastern Province", year: "Project delivery", partner: "Energy infrastructure", description: "Energy infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/coastal-energy.png", featured: false, showPhoto: true },
-  { id: "neom", title: "NEOM Infrastructure", category: "Strategic Infrastructure", location: "Northwestern Saudi Arabia", year: "Strategic development", partner: "Civil & Infrastructure", description: "Civil works, site development, utility infrastructure and associated project execution supporting one of the Kingdom's most significant strategic developments.", image: "/images/generated/northwest-infrastructure.png", featured: false, showPhoto: true },
-  { id: "railway", title: "Railway Infrastructure", category: "Transportation", location: "Saudi Arabia", year: "MASCO heritage", partner: "Major Infrastructure", description: "Railway infrastructure delivery and associated civil works across track engineering, rail laying, signaling systems and infrastructure foundations.", image: "/images/generated/railway-infrastructure.png", featured: false, showPhoto: true },
+  { id: "amiral", title: "AMIRAL — Package 6", category: "Petrochemicals / Industrial", location: "Jubail, Saudi Arabia", year: "Ongoing", partner: "EPC package delivery", description: "Multidisciplinary project execution supporting the AMIRAL development and demonstrating energy-sector delivery and quality-management performance.", image: "/images/generated/saudi-energy-hero.webp", featured: true, showPhoto: true },
+  { id: "mssd-spark", title: "MSSD — SPARK", category: "Industrial / Energy Infrastructure", location: "King Salman Energy Park, Eastern Province", year: "Project delivery", partner: "Construction & Infrastructure", description: "Multidisciplinary construction and project execution within one of Saudi Arabia's key energy ecosystems, with 99.09% waste diversion reported.", image: "/images/generated/industrial-utilities.webp", featured: true, showPhoto: true },
+  { id: "mssd-jeddah", title: "MSSD — Jeddah", category: "Industrial Infrastructure", location: "Jeddah, Saudi Arabia", year: "Project delivery", partner: "Construction & Infrastructure", description: "Construction and infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/jeddah-infrastructure.webp", featured: false, showPhoto: true },
+  { id: "ras-tanura", title: "Ras Tanura Project", category: "Oil & Gas / Energy", location: "Ras Tanura, Eastern Province", year: "Project delivery", partner: "Energy infrastructure", description: "Energy infrastructure project within MASCO Energy's portfolio.", image: "/images/generated/coastal-energy.webp", featured: false, showPhoto: true },
+  { id: "neom", title: "NEOM Infrastructure", category: "Strategic Infrastructure", location: "Northwestern Saudi Arabia", year: "Strategic development", partner: "Civil & Infrastructure", description: "Civil works, site development, utility infrastructure and associated project execution supporting one of the Kingdom's most significant strategic developments.", image: "/images/generated/northwest-infrastructure.webp", featured: false, showPhoto: true },
+  { id: "railway", title: "Railway Infrastructure", category: "Transportation", location: "Saudi Arabia", year: "MASCO heritage", partner: "Major Infrastructure", description: "Railway infrastructure delivery and associated civil works across track engineering, rail laying, signaling systems and infrastructure foundations.", image: "/images/generated/railway-infrastructure.webp", featured: false, showPhoto: true },
 ] as const;
 
 export const pillars = [
@@ -89,7 +89,7 @@ export const specializedBusinesses = [
     description: "A joint venture between MASCO Energy and CIS Gaz Arabia delivering specialized pipeline solutions for Saudi Arabia's energy and industrial sectors.",
     capabilities: ["Pipeline EPCC", "Specialized construction", "Operations & maintenance"],
     image: "/images/profile/masco-pipelines-logo-white.png",
-    photo: "/images/generated/pipeline-corridor.png",
+    photo: "/images/generated/pipeline-corridor.webp",
     metrics: ["+1,500 km pipelines constructed", "+35 years pipeline experience", "4 countries", "+280 projects completed"],
   },
   {
@@ -98,7 +98,7 @@ export const specializedBusinesses = [
     description: "A MASCO Energy company extending the portfolio into digital infrastructure, connectivity and technology solutions for modern industrial and infrastructure environments.",
     capabilities: ["Digital infrastructure", "Connectivity & fiber", "Systems integration", "Control & intelligent systems"],
     image: "/images/profile/lumeron-logo-white.png",
-    photo: "/images/generated/digital-infrastructure.png",
+    photo: "/images/generated/digital-infrastructure.webp",
     metrics: [],
   },
 ] as const;

@@ -9,11 +9,14 @@ import { SectionShell } from "@/components/home/SectionShell";
 type ServicesSectionProps = {
   layout?: "grid" | "list" | "cards";
   showMetrics?: boolean;
+  /** Folio index for themes that render a numbered kicker chip. */
+  index?: string;
 };
 
 export function ServicesSection({
   layout = "grid",
   showMetrics = true,
+  index,
 }: ServicesSectionProps) {
   if (layout === "list") {
     return (
@@ -23,6 +26,7 @@ export function ServicesSection({
       >
         <SectionHeader
           eyebrow="Services"
+          index={index}
           title="Integrated lifecycle capabilities"
           description="End-to-end services from early engineering through operations and maintenance."
         />
@@ -66,6 +70,7 @@ export function ServicesSection({
     <SectionShell id="services" className="bg-white">
       <SectionHeader
         eyebrow="Services"
+        index={index}
         title="Our Core Capabilities"
         description="Six connected capabilities covering the full asset lifecycle through one integrated EPC delivery platform."
       />
@@ -83,7 +88,7 @@ export function ServicesSection({
           return (
             <AnimateIn key={service.name} delay={index * 0.06}>
               <article className="masco-card group h-full overflow-hidden">
-                <div className="relative aspect-[16/10] overflow-hidden"><Image src={images.services[service.name as ServiceName]} alt={`Illustrative ${service.name.toLowerCase()} capability`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" /></div>
+                <div className="relative aspect-[16/10] overflow-hidden"><Image src={images.services[service.name as ServiceName]} alt={`${service.name.toLowerCase()} capability`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" /></div>
 
                 <div className="p-6 md:p-8">
                   {Icon && (

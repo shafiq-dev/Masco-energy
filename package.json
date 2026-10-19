@@ -8,7 +8,12 @@
     "start": "next start",
     "lint": "eslint",
     "start:local": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/start-local.ps1",
-    "verify:production": "node scripts/verify-production.mjs"
+    "verify:production": "node scripts/verify-production.mjs",
+    "tm": "node scripts/time-machine.mjs",
+    "tm:save": "node scripts/time-machine.mjs save",
+    "tm:list": "node scripts/time-machine.mjs list",
+    "tm:diff": "node scripts/time-machine.mjs diff",
+    "tm:restore": "node scripts/time-machine.mjs restore"
   },
   "dependencies": {
     "framer-motion": "^12.40.0",

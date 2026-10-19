@@ -1,21 +1,24 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Check } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 import { capabilityDetails } from "@/lib/capabilities";
+import { useRotatingTabs } from "@/components/home/useRotatingTabs";
+import { RotationControl } from "@/components/home/RotationControl";
 
 export function CapabilityExplorer() {
-  const [active, setActive] = useState(0);
+  const { active, select: setActive, rootRef, controlsRef, paused, reduced, running, interactionHandlers, togglePaused } = useRotatingTabs(capabilityDetails.length, 9000);
   const capability = capabilityDetails[active];
   return (
-    <section id="expertise" className="capability-section px-6 py-20 lg:px-16 lg:py-28">
+    <section ref={rootRef} {...interactionHandlers} id="expertise" className="capability-section px-6 py-20 lg:px-16 lg:py-28" data-rotating={running}>
       <div className="mx-auto max-w-7xl">
         <div className="mb-10 grid gap-6 lg:grid-cols-2 lg:items-end">
           <div><p className="story-eyebrow">Technical depth</p><h2 className="story-title mt-4">The capability behind the commitment.</h2></div>
           <p className="story-copy max-w-xl lg:justify-self-end">Explore the disciplines, systems and specialist support behind integrated project delivery.</p>
         </div>
-        <div role="tablist" aria-label="Technical capabilities" className="capability-tabs flex gap-2 overflow-x-auto border-b pb-4">
+        <div ref={controlsRef} className="rotation-toolbar flex items-start gap-3">
+        <div role="tablist" aria-label="Technical capabilities" className="capability-tabs flex min-w-0 flex-1 gap-2 overflow-x-auto border-b pb-4">
           {capabilityDetails.map((item, index) => <button key={item.name} type="button" role="tab" id={`capability-tab-${index}`} aria-selected={active === index} aria-controls="capability-panel" tabIndex={active === index ? 0 : -1} onClick={() => setActive(index)} onKeyDown={(event) => {
             if (["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) {
               event.preventDefault();
@@ -23,9 +26,12 @@ export function CapabilityExplorer() {
               setActive(next);
               document.getElementById(`capability-tab-${next}`)?.focus();
             }
-          }} className={`shrink-0 rounded-full px-5 py-3 text-sm font-bold transition-colors ${active === index ? "bg-masco-navy text-white" : "bg-masco-navy/5 text-masco-navy"}`}>{item.name}</button>)}
+          }} className={`timed-tab relative shrink-0 overflow-hidden rounded-full px-5 py-3 text-sm font-bold transition-colors ${active === index ? "bg-masco-navy text-white" : "bg-masco-navy/5 text-masco-navy"}`}>{item.name}{active === index && <span className="timed-tab-progress" aria-hidden="true" />}</button>)}
         </div>
-        <div role="tabpanel" id="capability-panel" aria-labelledby={`capability-tab-${active}`} className="mt-8 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+        <RotationControl paused={paused} reduced={reduced} onToggle={togglePaused} label="capability" />
+        </div>
+        <AnimatePresence mode="wait" initial={false}>
+        <motion.div key={active} initial={{ opacity: 0, y: reduced ? 0 : 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -8 }} transition={{ duration: reduced ? 0 : .28 }} role="tabpanel" id="capability-panel" aria-labelledby={`capability-tab-${active}`} className="capability-panel mt-8 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           <div className="relative min-h-72 overflow-hidden rounded-[var(--theme-radius,20px)] lg:min-h-[440px]">
             <Image key={capability.image} src={capability.image} alt={`${capability.name} delivery capabilities`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 40vw" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#071c31] via-[#071c31]/10 to-transparent" />
@@ -37,7 +43,8 @@ export function CapabilityExplorer() {
             </div>
             <a href="#contact" className="mt-8 inline-flex w-fit items-center gap-3 border-b border-masco-blue pb-2 text-sm font-bold text-masco-blue">Discuss your project <ArrowUpRight className="h-4 w-4" /></a>
           </div>
-        </div>
+        </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

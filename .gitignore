@@ -47,3 +47,8 @@ next-env.d.ts
 /tmp/
 
 .production-build
+
+# local design time machine (restore points are never committed)
+.time-machine/
+server-production.log
+server-production-error.log

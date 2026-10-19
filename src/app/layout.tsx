@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import CompanyFilm from "@/components/brand/CompanyFilm";
 
 const bukra = localFont({
   src: "../fonts/29lt-bukra-regular.ttf",
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en" className={`${bukra.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-white text-masco-black">
         {children}
+        <CompanyFilm />
       </body>
     </html>
   );

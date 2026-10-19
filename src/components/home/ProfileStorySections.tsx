@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/metrics/CountUp";
 import Image from "next/image";
 import { ArrowUpRight, ShieldCheck, Leaf, Users } from "lucide-react";
 import { CapabilityExplorer } from "@/components/home/CapabilityExplorer";
@@ -6,6 +7,12 @@ import { groupStrengths } from "@/lib/capabilities";
 import { ceoMessage, clientLogos, heritage, peopleCommitments, specializedBusinesses, sustainability } from "@/lib/home-content";
 import { homeVariants } from "@/lib/brand";
 import { AnimatedHeritageTimeline } from "@/components/home/AnimatedHeritageTimeline";
+
+function AnimatedFigure({ text }: { text: string }) {
+  const match = text.match(/^(\+?)([\d,]+(?:\.\d+)?)(.*)$/);
+  if (!match) return <>{text}</>;
+  return <CountUp metric={{ id: text, value: Number(match[2].replaceAll(",", "")), prefix: match[1], suffix: match[3], decimals: match[2].includes(".") ? match[2].split(".")[1].length : undefined, label: text }} />;
+}
 
 type Theme = (typeof homeVariants)[number]["slug"];
 const sequences: Record<Theme, readonly string[]> = {
@@ -50,19 +57,19 @@ export function ProfileStorySections({ theme = "classic" }: { theme?: Theme }) {
     businesses: <section id="businesses" className="story-section story-businesses">
       <div className="story-container"><p className="story-eyebrow">Our specialized businesses</p><h2 className="story-title mt-5 max-w-4xl">Connected expertise.<br />Wider possibilities.</h2><p className="story-copy mt-6 max-w-2xl">Specialized platforms complement core EPC delivery with pipeline expertise and digital infrastructure.</p>
         <div className="business-layout mt-12 grid gap-6 lg:grid-cols-2">{specializedBusinesses.map((business, index) => <article key={business.name} className="story-business-card story-panel overflow-hidden p-7 lg:p-10">
-          <div className="business-photo relative aspect-[9/16] overflow-hidden"><Image src={business.photo} alt={`Illustrative ${index === 0 ? "pipeline engineering" : "digital infrastructure"} capability`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 20vw" /></div>
+          <div className="business-photo relative aspect-[9/16] overflow-hidden"><Image src={business.photo} alt={`${index === 0 ? "pipeline engineering" : "digital infrastructure"} capability`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 20vw" /></div>
           <div className="business-card-content"><div className="flex items-start justify-between gap-4"><div className="business-logo-panel flex h-24 w-full max-w-[280px] items-center rounded-lg bg-[#071c31] px-6 py-4"><Image src={business.image} alt={business.name} width={300} height={100} className="max-h-16 w-full object-contain" /></div><span className="story-eyebrow">0{index + 1}</span></div>
           <p className="story-eyebrow mt-8">{business.eyebrow}</p><h3 className="mt-3 text-3xl font-bold">{business.name}</h3><p className="story-copy mt-5">{business.description}</p>
           <ul className="mt-7 space-y-3">{business.capabilities.map((capability) => <li key={capability} className="flex items-center gap-3 border-t border-current/15 pt-3 text-sm"><ArrowUpRight className="h-4 w-4 text-masco-blue" />{capability}</li>)}</ul>
-          {business.metrics.length > 0 && <div className="mt-8 border-t border-current/15 pt-6"><p className="story-eyebrow">Combined partner credentials</p><div className="mt-4 grid grid-cols-2 gap-5">{business.metrics.map((metric) => <p key={metric} className="text-sm font-bold leading-relaxed">{metric}</p>)}</div></div>}
+          {business.metrics.length > 0 && <div className="mt-8 border-t border-current/15 pt-6"><p className="story-eyebrow">Combined partner credentials</p><div className="mt-4 grid grid-cols-2 gap-5">{business.metrics.map((metric) => <p key={metric} className="text-sm font-bold leading-relaxed"><AnimatedFigure text={metric} /></p>)}</div></div>}
           <a href={`mailto:info@masco.com.sa?subject=${encodeURIComponent(`${business.name} enquiry`)}`} className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-masco-blue">Enquire about {business.name}<ArrowUpRight className="h-4 w-4" /></a></div>
         </article>)}</div>
       </div>
     </section>,
     assurance: <section id="assurance" className="story-section story-assurance">
       <div className="story-container">
-        <div className="grid items-center gap-12 lg:grid-cols-2"><div><p className="story-eyebrow">HSE, quality & governance</p><h2 className="story-title mt-5">Safety and quality.<br />Built into delivery.</h2><p className="story-copy mt-6">Structured systems connect planning, mobilization, site execution and handover. Workforce protection, quality assurance and continuous improvement are part of every stage.</p><div className="mt-8 flex items-center gap-5 border-y border-current/20 py-7"><ShieldCheck className="h-12 w-12 shrink-0 text-masco-blue" /><div><p className="text-4xl font-bold">10M+</p><p className="story-copy mt-2 text-sm">LTI-free man-hours reported across the project portfolio</p></div></div></div>
-          <div className="relative min-h-[360px] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/epc-construction-empty.png" alt="Illustrative organized industrial construction site" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div>
+        <div className="grid items-center gap-12 lg:grid-cols-2"><div><p className="story-eyebrow">HSE, quality & governance</p><h2 className="story-title mt-5">Safety and quality.<br />Built into delivery.</h2><p className="story-copy mt-6">Structured systems connect planning, mobilization, site execution and handover. Workforce protection, quality assurance and continuous improvement are part of every stage.</p><div className="mt-8 flex items-center gap-5 border-y border-current/20 py-7"><ShieldCheck className="h-12 w-12 shrink-0 text-masco-blue" /><div><p className="text-4xl font-bold"><AnimatedFigure text="10M+" /></p><p className="story-copy mt-2 text-sm">LTI-free man-hours reported across the project portfolio</p></div></div></div>
+          <div className="relative min-h-[360px] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/epc-construction-empty.webp" alt="organized industrial construction site" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div>
         </div>
         <div className="assurance-grid mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">{[
           ["Quality in execution", "Assurance and control across design, procurement, construction, inspection, testing, documentation and turnover."],
@@ -74,8 +81,8 @@ export function ProfileStorySections({ theme = "classic" }: { theme?: Theme }) {
     </section>,
     impact: <section id="impact" className="story-section story-impact">
       <div className="story-container"><div className="impact-layout grid gap-14 lg:grid-cols-2">
-        <div><div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/water-recycling.png" alt="Illustrative industrial water recycling installation" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div><Leaf className="mb-5 h-7 w-7 text-masco-blue" /><p className="story-eyebrow">Responsible project delivery</p><h2 className="story-title mt-5">Progress with purpose.</h2><p className="story-copy mt-6">Resource management, water stewardship and responsible site practices translate environmental commitments into project action.</p><div className="mt-8">{sustainability.map((item) => <article key={item.title} className="grid gap-3 border-t border-current/15 py-6 sm:grid-cols-[120px_1fr]"><p className="text-2xl font-bold text-masco-blue">{item.value}</p><div><h3 className="font-bold">{item.title}</h3><p className="story-copy mt-2 text-sm">{item.text}</p></div></article>)}</div></div>
-        <div><div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/technical-training-empty.png" alt="Illustrative technical training laboratory" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div><Users className="mb-5 h-7 w-7 text-masco-blue" /><p className="story-eyebrow">People & localization</p><h2 className="mt-4 text-3xl font-bold">Investing in national capability.</h2><div className="people-grid mt-8 grid gap-6 sm:grid-cols-2">{peopleCommitments.map((item) => <article key={item.title} className="story-panel border-t border-current/15 pt-5"><h3 className="font-bold">{item.title}</h3><p className="story-copy mt-3 text-sm">{item.text}</p></article>)}</div></div>
+        <div><div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/water-recycling.webp" alt="industrial water recycling installation" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div><Leaf className="mb-5 h-7 w-7 text-masco-blue" /><p className="story-eyebrow">Responsible project delivery</p><h2 className="story-title mt-5">Progress with purpose.</h2><p className="story-copy mt-6">Resource management, water stewardship and responsible site practices translate environmental commitments into project action.</p><div className="mt-8">{sustainability.map((item) => <article key={item.title} className="grid gap-3 border-t border-current/15 py-6 sm:grid-cols-[120px_1fr]"><p className="text-2xl font-bold text-masco-blue"><AnimatedFigure text={item.value} /></p><div><h3 className="font-bold">{item.title}</h3><p className="story-copy mt-2 text-sm">{item.text}</p></div></article>)}</div></div>
+        <div><div className="relative mb-8 aspect-[16/9] overflow-hidden rounded-[var(--theme-radius,20px)]"><Image src="/images/generated/technical-training-empty.webp" alt="technical training laboratory" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 45vw" /></div><Users className="mb-5 h-7 w-7 text-masco-blue" /><p className="story-eyebrow">People & localization</p><h2 className="mt-4 text-3xl font-bold">Investing in national capability.</h2><div className="people-grid mt-8 grid gap-6 sm:grid-cols-2">{peopleCommitments.map((item) => <article key={item.title} className="story-panel border-t border-current/15 pt-5"><h3 className="font-bold">{item.title}</h3><p className="story-copy mt-3 text-sm">{item.text}</p></article>)}</div></div>
       </div></div>
     </section>,
     clients: <section id="clients" className="story-section story-clients">

@@ -10,10 +10,8 @@ import { ProcessSection } from "@/components/home/ProcessSection";
 import { SectionHeader } from "@/components/home/SectionHeader";
 import { SectionShell } from "@/components/home/SectionShell";
 import { ServicesSection } from "@/components/home/ServicesSection";
-import { StatsSection } from "@/components/home/StatsSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { pillars, aboutParagraphs } from "@/lib/home-content";
-import { IconBox, pillarIcons } from "@/lib/icons";
 import { AnimateIn } from "@/components/metrics/AnimateIn";
 
 export default function MinimalHomePage() {
@@ -22,52 +20,46 @@ export default function MinimalHomePage() {
       <SiteHeader theme="minimal" />
 
       <main className="flex-1">
-      <HeroBanner
-        variant="minimal"
-        subtitle="Engineering Progress. Delivering with Purpose."
-        title="Saudi EPC excellence across energy & industrial sectors"
-        description={aboutParagraphs[0]}
-        primaryCta={{ label: "Our Story", href: "#about" }}
-      />
-
-      <MinimalMetricRail />
-      <StatsSection variant="inline" theme="minimal" />
-      <AboutSection layout="editorial" />
-      <ServicesSection layout="list" showMetrics />
-
-      <SectionShell className="border-t border-masco-navy/10 bg-white">
-        <SectionHeader
-          eyebrow="Our Values"
-          title="What defines us"
-          description="The principles driving MASCO Energy's commitment to quality, safety, Vision 2030, and digital innovation."
+        <HeroBanner
+          variant="minimal"
+          subtitle="Fewer words. Stronger proof."
+          title="Saudi EPC written in plain terms"
+          description={aboutParagraphs[0]}
+          primaryCta={{ label: "Our Story", href: "#about" }}
         />
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          {pillars.map((pillar, index) => {
-            const Icon = pillarIcons[pillar.title];
-            return (
-              <AnimateIn key={pillar.title} delay={index * 0.08}>
-                <article className="masco-card flex gap-4 p-6">
-                  {Icon && <IconBox icon={Icon} variant="light" size="lg" />}
-                  <div>
-                    <h3 className="text-lg font-bold text-masco-navy">
-                      {pillar.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-masco-black/65">
-                      {pillar.text}
-                    </p>
-                  </div>
+
+        <MinimalMetricRail />
+        <AboutSection layout="editorial" />
+        <ServicesSection layout="list" showMetrics />
+
+        <SectionShell className="border-t border-masco-navy/10 bg-white">
+          <SectionHeader
+            eyebrow="Principles"
+            title="What we refuse to dilute"
+            description="Quality, safety, Vision 2030 alignment, and digital discipline — stated without marketing chrome."
+          />
+          <div className="mt-14">
+            {pillars.map((pillar, index) => (
+              <AnimateIn key={pillar.title} delay={index * 0.06}>
+                <article className="grid gap-3 border-t border-masco-navy/15 py-8 md:grid-cols-[minmax(0,12rem)_1fr] md:gap-10">
+                  <h3 className="text-base font-normal tracking-tight text-masco-navy">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-masco-black/65 md:text-base">
+                    {pillar.text}
+                  </p>
                 </article>
               </AnimateIn>
-            );
-          })}
-        </div>
-      </SectionShell>
+            ))}
+            <div className="border-t border-masco-navy/15" aria-hidden="true" />
+          </div>
+        </SectionShell>
 
-      <ProjectDirectorySection theme="minimal" />
-      <ProcessSection />
-      <TestimonialsSection layout="quote" />
-      <ProfileStorySections theme="minimal" />
-      <FAQSection variant="minimal" />
+        <ProjectDirectorySection theme="minimal" />
+        <ProcessSection />
+        <TestimonialsSection layout="quote" />
+        <ProfileStorySections theme="minimal" />
+        <FAQSection variant="minimal" />
       </main>
 
       <SiteFooter theme="minimal" />

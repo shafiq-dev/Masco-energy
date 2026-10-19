@@ -42,7 +42,7 @@ function ClassicPreview() {
       </div>
       <div
         className="mx-2 flex flex-1 flex-col items-center justify-center rounded-[8px] px-4 py-6 text-center text-white"
-        style={{ background: `linear-gradient(90deg, #134880dd, #13488055), url(/images/generated/saudi-energy-hero.png) center/cover` }}
+        style={{ background: `linear-gradient(90deg, #134880dd, #13488055), url(/images/generated/saudi-energy-hero.webp) center/cover` }}
       >
         <span className="text-[7px] font-bold">Saudi EPC &amp; Industrial Infrastructure</span>
         <span className="mt-2 max-w-[80%] text-[5px] text-white/80">
@@ -84,7 +84,7 @@ function MinimalPreview() {
           Decades of Saudi contracting experience focused into one energy platform.
         </p>
       </div>
-      <div className="relative mt-3 min-h-12 flex-1 overflow-hidden"><Image src="/images/generated/pipeline-corridor.png" alt="" fill className="object-cover" sizes="350px" /></div>
+      <div className="relative mt-3 min-h-12 flex-1 overflow-hidden"><Image src="/images/generated/pipeline-corridor.webp" alt="" fill className="object-cover" sizes="350px" /></div>
       <div className="mt-auto space-y-2">
         <div className="h-px bg-masco-navy/10" />
         <div className="flex justify-between text-[5px] text-masco-navy">
@@ -113,7 +113,7 @@ function ServicesPreview() {
             key={label}
             className="rounded-[6px] border border-masco-navy/10 p-2"
           >
-            <div className="relative h-9 overflow-hidden rounded-[4px]"><Image src={`/images/generated/${label === "Engineering" ? "engineering-design-empty" : label === "Procurement" ? "procurement-logistics-empty" : label === "Construction" ? "epc-construction-empty" : "commissioning-systems"}.png`} alt="" fill className="object-cover" sizes="150px" /></div>
+            <div className="relative h-9 overflow-hidden rounded-[4px]"><Image src={`/images/generated/${label === "Engineering" ? "engineering-design-empty" : label === "Procurement" ? "procurement-logistics-empty" : label === "Construction" ? "epc-construction-empty" : "commissioning-systems"}.webp`} alt="" fill className="object-cover" sizes="150px" /></div>
             <span className="mt-1 block font-bold text-masco-navy">{label}</span>
             <div className="mt-1 h-1 w-full rounded bg-masco-black/10" />
           </div>
@@ -137,7 +137,7 @@ function SplitPreview() {
           Saudi market experience, resource depth and execution capacity.
         </p>
       </div>
-      <div className="flex w-[45%] flex-col gap-2 bg-masco-navy/5 p-3" style={{ background: "linear-gradient(#13488044,#13488066), url(/images/generated/coastal-energy.png) center/cover" }}>
+      <div className="flex w-[45%] flex-col gap-2 bg-masco-navy/5 p-3" style={{ background: "linear-gradient(#13488044,#13488066), url(/images/generated/coastal-energy.webp) center/cover" }}>
         {[
           { n: "+4.5B", l: "Portfolio" },
           { n: "3,000+", l: "Workforce" },
@@ -170,7 +170,7 @@ function EditorialPreview() {
       >
         <span className="text-[7px] font-bold">Company Profile 2026</span>
       </div>
-      <div className="flex-1 px-3 py-2" style={{ background: "linear-gradient(90deg,#ffffffee,#ffffff77),url(/images/generated/engineering-design-empty.png) center/cover" }}>
+      <div className="flex-1 px-3 py-2" style={{ background: "linear-gradient(90deg,#ffffffee,#ffffff77),url(/images/generated/engineering-design-empty.webp) center/cover" }}>
         <div className="h-1 w-6 rounded bg-masco-blue" />
         <span className="mt-2 block text-[6px] font-bold text-masco-black">
           Vision, Mission &amp; Values
@@ -205,7 +205,7 @@ function MonumentalPreview() {
         </span>
         <div className="mt-3 h-[2px] w-10 bg-masco-blue" />
       </div>
-      <div className="relative mt-3 h-16 overflow-hidden"><Image src="/images/generated/epc-construction-empty.png" alt="" fill className="object-cover" sizes="350px" /></div>
+      <div className="relative mt-3 h-16 overflow-hidden"><Image src="/images/generated/epc-construction-empty.webp" alt="" fill className="object-cover" sizes="350px" /></div>
     </div>
   );
 }
@@ -221,7 +221,7 @@ function KineticPreview() {
         <span className="block text-[12px] font-bold leading-none">One connected</span>
         <span className="block text-[12px] font-bold leading-none text-masco-blue">delivery system.</span>
       </div>
-      <div className="relative mb-3 h-10 overflow-hidden rounded-md"><Image src="/images/generated/commissioning-systems.png" alt="" fill className="object-cover" sizes="350px" /></div>
+      <div className="relative mb-3 h-10 overflow-hidden rounded-md"><Image src="/images/generated/commissioning-systems.webp" alt="" fill className="object-cover" sizes="350px" /></div>
       <div className="grid grid-cols-4 gap-1">
         {["01", "02", "03", "04"].map((step) => (
           <div key={step} className="border-t border-white/25 pt-1 text-white/55">{step}</div>
@@ -242,7 +242,7 @@ function DossierPreview() {
       <div className="p-3">
         <span className="uppercase tracking-widest text-masco-blue">Corporate profile</span>
         <span className="mt-3 block text-[10px] font-bold leading-tight text-masco-navy">A disciplined partner for complex infrastructure.</span>
-        <div className="relative mt-3 h-9 overflow-hidden"><Image src="/images/generated/industrial-utilities.png" alt="" fill className="object-cover" sizes="250px" /></div>
+        <div className="relative mt-3 h-9 overflow-hidden"><Image src="/images/generated/industrial-utilities.webp" alt="" fill className="object-cover" sizes="250px" /></div>
         <div className="mt-4 space-y-2">
           {["Capabilities", "Sectors", "Values"].map((label, index) => (
             <div key={label} className="flex items-center gap-2 border-t border-masco-navy/15 pt-1">
@@ -264,7 +264,7 @@ function LuminousPreview() {
         <span className="mt-1 block text-[12px] font-bold leading-none text-masco-blue">comes next.</span>
       </div>
       <span className="mt-3 max-w-[75%] leading-relaxed text-masco-black/50">Integrated delivery for essential energy and industrial infrastructure.</span>
-      <div className="relative mt-3 min-h-12 w-full flex-1 overflow-hidden rounded-t-[12px]"><Image src="/images/generated/saudi-energy-hero.png" alt="" fill className="object-cover" sizes="350px" /></div>
+      <div className="relative mt-3 min-h-12 w-full flex-1 overflow-hidden rounded-t-[12px]"><Image src="/images/generated/saudi-energy-hero.webp" alt="" fill className="object-cover" sizes="350px" /></div>
     </div>
   );
 }

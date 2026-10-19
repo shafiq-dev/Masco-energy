@@ -5,36 +5,46 @@ type MascoLogoProps = {
   href?: string;
   size?: "xs" | "sm" | "md" | "lg";
   className?: string;
+  /** Light wordmark for dark surfaces (kinetic / dark headers). */
+  variant?: "default" | "light";
 };
 
+/** Wordmark aspect ≈ 994×228 (≈4.36:1). Heights tuned for sticky headers. */
 const sizes = {
-  xs: { width: 92, height: 74, className: "h-[74px] w-[92px]" },
-  sm: { width: 120, height: 96, className: "h-24 w-[120px]" },
-  md: { width: 66, height: 68, className: "h-[68px] w-[66px]" },
-  lg: { width: 92, height: 96, className: "h-24 w-[92px]" },
-};
+  xs: { width: 168, height: 38, className: "h-[38px] w-[168px]" },
+  sm: { width: 200, height: 46, className: "h-[46px] w-[200px]" },
+  md: { width: 240, height: 55, className: "h-[55px] w-[240px]" },
+  lg: { width: 320, height: 73, className: "h-[73px] w-[320px]" },
+} as const;
 
 export function MascoLogo({
-  href = "/main",
+  href = "/home/luminous",
   size = "md",
   className = "",
+  variant = "default",
 }: MascoLogoProps) {
   const { width, height, className: sizeClass } = sizes[size];
+  const src =
+    variant === "light" ? "/masco-logo-light.png" : "/masco-logo.png";
 
   const logo = (
     <Image
-      src="/masco-logo.png"
+      src={src}
       alt="MASCO Energy"
       width={width}
       height={height}
-      className={`object-contain ${sizeClass} ${className}`}
+      className={`object-contain object-left ${sizeClass} ${className}`}
       priority
     />
   );
 
   if (href) {
     return (
-      <Link href={href} className="inline-flex shrink-0 items-center">
+      <Link
+        href={href}
+        className="inline-flex shrink-0 items-center"
+        aria-label="MASCO Energy — home"
+      >
         {logo}
       </Link>
     );

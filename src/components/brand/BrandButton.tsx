@@ -15,7 +15,7 @@ export function BrandButton({
   className = "",
 }: BrandButtonProps) {
   const base =
-    "inline-flex cursor-pointer items-center justify-center rounded-[20px] px-6 py-3 text-sm font-bold transition-all";
+    "inline-flex cursor-pointer items-center justify-center rounded-[var(--r)] px-6 py-3 text-sm font-bold transition-all";
 
   const variants = {
     primary: "masco-gradient text-white hover:opacity-90",

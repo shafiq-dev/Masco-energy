@@ -1,4 +1,5 @@
 import { type ReactNode } from "react";
+import { SectionKicker } from "@/components/home/SectionKicker";
 
 type SectionHeaderProps = {
   eyebrow: string;
@@ -7,6 +8,10 @@ type SectionHeaderProps = {
   align?: "left" | "center";
   className?: string;
   action?: ReactNode;
+  /** Folio index ("01") for themes that render one. */
+  index?: string;
+  /** "inverse" when the header sits on a dark panel. */
+  kickerTone?: "default" | "inverse";
 };
 
 export function SectionHeader({
@@ -16,6 +21,8 @@ export function SectionHeader({
   align = "left",
   className = "",
   action,
+  index,
+  kickerTone = "default",
 }: SectionHeaderProps) {
   const isCenter = align === "center";
 
@@ -29,16 +36,13 @@ export function SectionHeader({
         }`}
       >
         <div className={isCenter ? "mx-auto max-w-3xl" : "max-w-3xl"}>
-          <div
-            className={`flex items-center gap-3 ${
-              isCenter ? "justify-center" : ""
-            }`}
+          <SectionKicker
+            index={index}
+            tone={kickerTone}
+            className={isCenter ? "justify-center" : ""}
           >
-            <span className="h-2 w-2 shrink-0 rounded-full bg-masco-blue" />
-            <p className="text-xs font-bold uppercase tracking-[0.25em] text-masco-blue">
-              {eyebrow}
-            </p>
-          </div>
+            {eyebrow}
+          </SectionKicker>
           <h2 className="mt-4 text-3xl font-bold leading-tight text-masco-navy md:text-4xl lg:text-[2.75rem]">
             {title}
           </h2>

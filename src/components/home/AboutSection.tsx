@@ -18,7 +18,7 @@ export function AboutSection({ layout = "centered" }: AboutSectionProps) {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <SectionImage
             src={images.about}
-            alt="Illustrative technical training facility"
+            alt="technical training facility"
             aspect="portrait"
             className="shadow-md"
           />
@@ -66,7 +66,7 @@ export function AboutSection({ layout = "centered" }: AboutSectionProps) {
           <div className="lg:col-span-5">
             <SectionImage
               src={images.about}
-              alt="Illustrative technical training equipment"
+              alt="technical training equipment"
               aspect="portrait"
               className="sticky top-24 shadow-lg"
             />
@@ -88,7 +88,7 @@ export function AboutSection({ layout = "centered" }: AboutSectionProps) {
         <div className="lg:col-span-5">
           <SectionImage
             src={images.about}
-            alt="Illustrative technical training laboratory"
+            alt="technical training laboratory"
             aspect="portrait"
             overlay="gradient"
             className="shadow-lg"

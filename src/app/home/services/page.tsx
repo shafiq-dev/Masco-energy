@@ -7,10 +7,8 @@ import { HeroBanner } from "@/components/home/HeroBanner";
 import { MetricsDashboardSection } from "@/components/home/MetricsDashboardSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { ProjectDirectorySection } from "@/components/home/ProjectDirectorySection";
-
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { StatsSection } from "@/components/home/StatsSection";
-import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { aboutParagraphs } from "@/lib/home-content";
 
 export default function ServicesHomePage() {
@@ -19,24 +17,22 @@ export default function ServicesHomePage() {
       <SiteHeader theme="services" />
 
       <main className="flex-1">
-      <HeroBanner
-        variant="services"
-        subtitle="Engineering Progress. Delivering with Purpose."
-        title="Integrated EPC Delivery Across the Kingdom"
-        description={aboutParagraphs[3]}
-        primaryCta={{ label: "View Services", href: "#services" }}
-      />
+        <HeroBanner
+          variant="services"
+          subtitle="Capability console · EPC index"
+          title="Integrated delivery across the Kingdom"
+          description={aboutParagraphs[3]}
+          primaryCta={{ label: "View Services", href: "#services" }}
+        />
 
-      <StatsSection variant="inline" theme="services" />
-      <ServicesSection layout="cards" showMetrics />
-
-      <AboutSection layout="split" />
-      <ProjectDirectorySection theme="services" />
-      <ProcessSection />
-      <MetricsDashboardSection compact />
-      <TestimonialsSection layout="cards" />
-      <ProfileStorySections theme="services" />
-      <FAQSection variant="classic" />
+        <StatsSection variant="inline" theme="services" />
+        <ServicesSection layout="cards" showMetrics index="01" />
+        <AboutSection layout="split" />
+        <ProjectDirectorySection theme="services" />
+        <ProcessSection />
+        <MetricsDashboardSection compact />
+        <ProfileStorySections theme="services" />
+        <FAQSection variant="classic" />
       </main>
 
       <SiteFooter theme="services" />
