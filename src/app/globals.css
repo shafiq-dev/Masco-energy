@@ -760,7 +760,6 @@ body:has(dialog[open]) { overflow: hidden; }
  .theme-luminous .story-title { font-size: clamp(2rem,8.2vw,3.4rem); }
  .theme-luminous .story-business-card { border-radius: 22px; }
  .profile-story .story-copy { line-height: 1.85; }
- header a[aria-label="MASCO Energy â€” home"] img { width: clamp(120px,34vw,160px); height: auto; }
  .theme-luminous header a[href="#contact"] { padding-inline: 12px; font-size: 11px; }
  .projects-luminous .project-item:first-child { grid-column: auto; }
 }
@@ -805,7 +804,6 @@ body:has(dialog[open]) { overflow: hidden; }
 
 .theme-luminous header a[href="#contact"] { white-space: nowrap; flex-shrink: 0; }
 @media (max-width: 360px) {
- .theme-luminous header a[aria-label="MASCO Energy — home"] img { width: 112px; }
  .theme-luminous #home .theme-h1 { font-size: 2.3rem; }
  .theme-luminous #home .mt-9 a { font-size: 12px; white-space: nowrap; }
  .theme-luminous #home .mt-9 a:first-child { padding-inline: 20px; }
@@ -882,3 +880,6 @@ body:has(dialog[open]) { overflow: hidden; }
 /* Lightweight native mobile navigation: immediate close, no blur or delayed links. */
 .masco-original-logo{filter:none!important;box-shadow:none!important;text-shadow:none!important;transform:none!important;background:none!important}
 .mobile-menu-trigger,.mobile-menu-close{display:grid;place-items:center;width:44px;height:44px;flex-shrink:0;border:1px solid #13488020;border-radius:50%;color:#134880;background:transparent;cursor:pointer;touch-action:manipulation}.mobile-menu-trigger.is-dark{color:white;border-color:#ffffff40}.mobile-menu-close{background:#eaf1f6;border:0}.mobile-navigation{position:fixed;inset:0;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:#f7fafc;color:#134880;z-index:150;overscroll-behavior:contain}.mobile-navigation::backdrop{background:#071c31}.mobile-navigation[open]{animation:mobile-navigation-in .16s ease-out}.mobile-navigation-inner{display:flex;flex-direction:column;min-height:100%;max-width:720px;margin:auto;padding: max(12px,env(safe-area-inset-top)) 24px max(24px,env(safe-area-inset-bottom))}.mobile-navigation-header{display:flex;align-items:center;justify-content:space-between;min-height:72px;border-bottom:1px solid #13488018}.mobile-navigation nav{padding:28px 0;flex:1}.mobile-navigation-eyebrow{font-size:9px;letter-spacing:.18em;color:#647e91;margin-bottom:18px}.mobile-navigation li{border-bottom:1px solid #13488016}.mobile-navigation li a{display:flex;align-items:center;gap:16px;min-height:68px;padding:12px 0;font-size:clamp(20px,5vw,30px);letter-spacing:-.04em;touch-action:manipulation}.mobile-navigation li a>svg{margin-left:auto}.mobile-navigation-number{font-family:Arial,sans-serif;font-size:10px;letter-spacing:.05em;color:#1691cf}.mobile-navigation-footer{padding-top:16px}.mobile-navigation-contact{display:flex;align-items:center;justify-content:space-between;padding:17px 20px;border-radius:12px;background:#134880;color:white;font-size:17px}.mobile-navigation-email{display:block;margin-top:22px;font-size:13px}.mobile-navigation-footer p{margin-top:10px;font-size:9px;color:#647e91}.mobile-navigation button:focus-visible,.mobile-navigation a:focus-visible,.mobile-menu-trigger:focus-visible{outline:2px solid #1691cf;outline-offset:4px}@keyframes mobile-navigation-in{from{opacity:.5;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.mobile-navigation[open]{animation:none}}@media(max-height:650px){.mobile-navigation nav{padding:16px 0}.mobile-navigation li a{min-height:50px;font-size:20px}.mobile-navigation-email{margin-top:14px}}
+
+/* The stacked logo must keep its own ratio on narrow screens. */
+header img.masco-original-logo { width: 72px; height: 58px; max-width: none; max-height: 58px; object-fit: contain; flex-shrink: 0; }
